@@ -4,7 +4,12 @@ A single private marketplace that distributes all InsideDesk Claude plugins to t
 team. Add it once, then keep everything up to date with a single click.
 
 Marketplace name: **`insidedesk-tools`**
-Repo: `git@gitlab.com:insidedesk/id-claude-plugin-mono.git`
+GitLab (source of truth): `git@gitlab.com:insidedesk/id-claude-plugin-mono.git`
+GitHub (public mirror, used by Cowork): `https://github.com/scjcoder/id-claude-plugin-mono`
+
+> **Why two remotes?** Cowork's marketplace installer requires a publicly accessible repo.
+> GitLab stays private (source of truth); GitHub is a read-only public mirror that auto-syncs
+> via GitLab's push mirror feature. Edit and push to GitLab only — GitHub updates automatically.
 
 ---
 
@@ -24,7 +29,7 @@ Repo: `git@gitlab.com:insidedesk/id-claude-plugin-mono.git`
 1. In Claude, open **Customize** in the left sidebar (in Cowork, open the **Cowork** tab first).
 2. Go to the **Plugins** tab.
 3. Under **Personal plugins**, click **"+"** → **Add marketplace** → **Add from a repository**.
-4. Enter the repository: `gitlab.com/insidedesk/id-claude-plugin-mono` (authorize GitLab access if prompted).
+4. Enter the repository: `https://github.com/scjcoder/id-claude-plugin-mono` (this is the public GitHub mirror — the GitLab repo is private and won't work directly in Cowork).
 5. Install the plugins you need. Most people want `id-claude-shared` plus whichever of ops / reporting / integrations applies to their role.
 
 ## For teammates: get the latest version

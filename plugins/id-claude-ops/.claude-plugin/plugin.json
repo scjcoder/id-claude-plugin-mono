@@ -1,0 +1,18 @@
+{
+  "name": "id-claude-ops",
+  "version": "1.22.6",
+  "description": "InsideDesk client ops plugin \u2014 client offboarding, install ticketing, communications, HubSpot workflows, and AWS authentication.",
+  "author": {
+    "name": "Sean Johnson",
+    "email": "sean.johnson@insidedesk.com"
+  },
+  "keywords": [
+    "insidedesk",
+    "hubspot",
+    "client",
+    "install",
+    "offboarding",
+    "comms",
+    "aws"
+  ]
+}

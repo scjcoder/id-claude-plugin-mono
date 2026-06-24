@@ -1,0 +1,30 @@
+# Built plugin archives — not needed; marketplace serves source dirs directly
+*.plugin
+
+# Data exports / generated reports
+*.xlsx
+*.xls
+*.pdf
+*.png
+reports/
+tax_id_report_*
+pms_oos_notes.md
+
+# OS / tooling cruft
+.DS_Store
+__pycache__/
+*.pyc
+.security-scan/
+.windsurf/
+
+# Terraform (infra lives in the standalone repos, not here)
+infra/
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# One-off run artifacts (contain real client data / creds — never commit)
+*_run.py
+*_20[0-9][0-9]_[0-9][0-9]_[0-9][0-9].py
+create_tickets_*.py
+build_grouped.py

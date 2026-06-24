@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+- Public-repo hardening: removed `SECURITY_REVIEW.md` from the source and from git
+  history (history rewritten + force-pushed). Moved non-secret runtime identifiers
+  (AWS account id, internal hostnames, HubSpot portal id, Slack ids) into a gitignored
+  `config/insidedesk.local.json`; source now carries placeholders (`<AWS_ACCOUNT_ID>`,
+  etc.) resolved via the *Runtime identifiers* table in `CLAUDE.md` and an auto-loading
+  config in the shared scripts. Added a repo-wide daily leak scanner (`.security/scan.py`).
+
 ## [1.9.4] - 2026-06-22
 
 ### Fixed

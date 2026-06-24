@@ -1,0 +1,12 @@
+{
+  "_comment": "Runtime identifiers for InsideDesk plugins. Copy this file to 'insidedesk.local.json' (gitignored) and fill in the REAL values. Skills and scripts resolve placeholders like <AWS_ACCOUNT_ID> from the local file at runtime; the public source carries placeholders only. None of these are secrets (API tokens/keys live in AWS Secrets Manager / macOS Keychain via the get-secret skill) — these are non-secret operational identifiers kept out of the public source.",
+  "aws_account_id": "<AWS_ACCOUNT_ID>",
+  "aws_profile": "Install-<AWS_ACCOUNT_ID>",
+  "aws_sso_portal": "<AWS_SSO_PORTAL>",
+  "goldeneye_host": "<GOLDENEYE_HOST>",
+  "admin_api_host": "<ADMIN_API_HOST>",
+  "hubspot_portal_id": "<HUBSPOT_PORTAL_ID>",
+  "slack_user_sean": "<SLACK_USER_SEAN>",
+  "slack_dm_sean": "<SLACK_DM_SEAN>",
+  "slack_chan_claim_feedback": "<SLACK_CHAN_CLAIM_FEEDBACK>"
+}

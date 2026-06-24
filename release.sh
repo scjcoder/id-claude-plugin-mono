@@ -38,7 +38,7 @@ CHANGELOG="$PLUGIN_DIR/docs/changelog.md"
 
 # Slack release announcement (set RELEASE_NO_SLACK=1 to skip).
 # Token comes from the macOS Keychain entry used by the InsideDesk skills.
-SLACK_CHANNEL="<SLACK_DM_SEAN>"
+SLACK_CHANNEL="${SLACK_DM_SEAN:-$(python3 -c "import json,os;p='$REPO_ROOT/config/insidedesk.local.json';print(json.load(open(p)).get('slack_dm_sean','<SLACK_DM_SEAN>') if os.path.isfile(p) else '<SLACK_DM_SEAN>')" 2>/dev/null || echo '<SLACK_DM_SEAN>')}"
 slack_token() { security find-generic-password -a "insidedesk" -s "slack-bot-token" -w 2>/dev/null; }
 
 # --- validate ---

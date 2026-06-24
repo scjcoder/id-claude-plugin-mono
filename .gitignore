@@ -23,6 +23,9 @@ __pycache__/
 # Infra-posture review docs — describe internal weaknesses; keep local, not public
 SECURITY_REVIEW.md
 
+# Runtime identifier config — real values live here, public source carries placeholders
+config/*.local.json
+
 # Terraform (infra lives in the standalone repos, not here)
 infra/
 *.tfstate

@@ -66,16 +66,37 @@ GENERIC_FP_RE = re.compile(
     r"(?i)(example|placeholder|your[-_]|<[a-z]|\$\{|os\.environ|getenv|get[-_]secret|"
     r"find-generic-password|secretsmanager|redacted|xxxx|\.\.\.|=\s*['\"](none|null|true|false)['\"])")
 
-# Internal-identifier disclosure (medium).  These are not secrets but are
-# internal infra surface that lives on a PUBLIC repo.  Most are baselined.
-IDENTIFIER_RULES = [
-    ("aws_account_id",     "medium", re.compile(r"\b<AWS_ACCOUNT_ID>\b")),
-    ("internal_hostname",  "medium", re.compile(r"\b(?:admin-api\.production|goldeneye)\.insidedesk\.net\b")),
-    ("aws_sso_portal",     "medium", re.compile(r"\bseanjo\.awsapps\.com\b")),
-    ("hubspot_portal_id",  "low",    re.compile(r"app\.hubspot\.com/contacts/<HUBSPOT_PORTAL_ID>\b")),
-    ("slack_id",           "low",    re.compile(r"\b(?=[A-Z0-9]*[0-9])[CUDGWT][A-Z0-9]{7,10}\b")),
-    ("infra_posture_doc",  "medium", re.compile(r"SECURITY_REVIEW\.md$")),  # path rule, see below
-]
+# Internal-identifier disclosure (medium/low).  These are not secrets but are
+# internal infra surface that must not appear in a PUBLIC repo.  The real values
+# are loaded from the gitignored config so this scanner source carries none of
+# them; if the config is absent (e.g. a fresh public clone) identifier scanning
+# is simply skipped and only the secret rules run.
+def build_identifier_rules():
+    cfg_path = os.path.join(REPO, "config", "insidedesk.local.json")
+    try:
+        with open(cfg_path) as f:
+            cfg = json.load(f)
+    except (OSError, ValueError):
+        return []
+    specs = [
+        ("aws_account_id",    "medium", "aws_account_id"),
+        ("aws_sso_portal",    "medium", "aws_sso_portal"),
+        ("internal_hostname", "medium", "goldeneye_host"),
+        ("internal_hostname", "medium", "admin_api_host"),
+        ("hubspot_portal_id", "low",    "hubspot_portal_id"),
+        ("slack_id",          "low",    "slack_user_sean"),
+        ("slack_id",          "low",    "slack_dm_sean"),
+        ("slack_id",          "low",    "slack_chan_claim_feedback"),
+    ]
+    rules = []
+    for rule, sev, key in specs:
+        val = cfg.get(key)
+        if val and "<" not in val:
+            rules.append((rule, sev, re.compile(re.escape(val))))
+    return rules
+
+
+IDENTIFIER_RULES = build_identifier_rules()
 
 
 def run(args: list[str]) -> str:

@@ -137,3 +137,25 @@ For releases, prefer `./release.sh` (from the monorepo root) — it crafts the c
 Generated artifacts excluded from tracking:
 - `*.plugin` — built plugin archives
 - `.DS_Store`, `__pycache__/`, `*.pyc`
+---
+
+## Runtime identifiers (resolve before acting)
+
+This is a **public** repo, so operational identifiers are stored as placeholders.
+Before running anything that needs a real value, resolve placeholders from
+`config/insidedesk.local.json` (gitignored — copy it from `config/insidedesk.example.json`):
+
+| Placeholder | Config key |
+|---|---|
+| `<AWS_ACCOUNT_ID>` | `aws_account_id` |
+| `<AWS_SSO_PORTAL>` | `aws_sso_portal` |
+| `<GOLDENEYE_HOST>` | `goldeneye_host` |
+| `<ADMIN_API_HOST>` | `admin_api_host` |
+| `<HUBSPOT_PORTAL_ID>` | `hubspot_portal_id` |
+| `<SLACK_USER_SEAN>` | `slack_user_sean` |
+| `<SLACK_DM_SEAN>` | `slack_dm_sean` |
+| `<SLACK_CHAN_CLAIM_FEEDBACK>` | `slack_chan_claim_feedback` |
+
+Scripts resolve these automatically (config file + env overrides). These are
+**non-secret**; API tokens/keys still come from Keychain / Secrets Manager via the
+`get-secret` skill.

@@ -14,12 +14,12 @@ Usage:
       --filename display-name.pdf \\
       --title "File Title in Slack" \\
       [--comment "Initial comment (defaults to title)"] \\
-      [--user <SLACK_USER_SEAN>] \\
-      [--channel <SLACK_DM_SEAN>]
+      [--user <slack-user-id>] \\
+      [--channel <dm-channel-id>]
 
 Options:
   --token   Slack bot token (required — retrieve via get-secret skill, name: slack-bot-token)
-  --user    Slack user ID to open a DM with (default: <SLACK_USER_SEAN> = Sean Johnson)
+  --user    Slack user ID to open a DM with (default: resolved from config/insidedesk.local.json)
   --channel Direct channel ID — skip conversations.open if you already know it
 
 On success, prints:  ok=True  permalink=https://...
@@ -27,7 +27,41 @@ On failure, exits non-zero with an error message.
 """
 import argparse, json, os, sys, urllib.request, urllib.parse
 
-SEAN_USER_ID = "<SLACK_USER_SEAN>"
+def _id_config():
+    """Resolve non-secret runtime identifiers. Lookup order per key: env var, then
+    config/insidedesk.local.json (walking up to the repo root), then the macOS Keychain
+    (account "insidedesk", service "insidedesk-runtime-config"), then the placeholder.
+    The Keychain fallback lets scripts resolve values even when run from an installed
+    plugin location outside the monorepo. Real values never live in the public source."""
+    cfg, d = {}, os.path.dirname(os.path.abspath(__file__))
+    for _ in range(8):
+        p = os.path.join(d, "config", "insidedesk.local.json")
+        if os.path.isfile(p):
+            try:
+                cfg = json.load(open(p))
+            except Exception:
+                pass
+            break
+        nd = os.path.dirname(d)
+        if nd == d:
+            break
+        d = nd
+    if not cfg:
+        try:
+            import subprocess
+            out = subprocess.run(
+                ["security", "find-generic-password", "-a", "insidedesk",
+                 "-s", "insidedesk-runtime-config", "-w"],
+                capture_output=True, text=True)
+            if out.returncode == 0 and out.stdout.strip():
+                cfg = json.loads(out.stdout.strip())
+        except Exception:
+            pass
+    return lambda key, env, default: os.environ.get(env) or cfg.get(key) or default
+
+_idc = _id_config()
+
+SEAN_USER_ID = _idc("slack_user_sean", "SLACK_USER_SEAN", "<SLACK_USER_SEAN>")
 
 
 def slack_post(url: str, token: str, data: dict, form: bool = False) -> dict:

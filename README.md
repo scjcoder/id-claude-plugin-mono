@@ -40,6 +40,29 @@ release notes.)
 
 ---
 
+## Security & configuration
+
+This repo is **public** (via the GitHub mirror), so it is treated as public-facing:
+
+- **No secrets in the repo.** API tokens, keys, and passwords live in AWS Secrets Manager /
+  macOS Keychain and are fetched at runtime via the `get-secret` skill — never committed.
+- **Runtime identifiers are placeholders.** Non-secret operational identifiers (AWS account
+  id, internal hostnames, HubSpot portal id, Slack ids) appear in the source as placeholders
+  like `<AWS_ACCOUNT_ID>`. The real values live only in `config/insidedesk.local.json`
+  (gitignored). To set up a machine, `cp config/insidedesk.example.json config/insidedesk.local.json`
+  and fill it in — see [`config/README.md`](config/README.md) (it can also be backed up to /
+  restored from the macOS Keychain). Scripts resolve placeholders automatically (config file +
+  env overrides); skills resolve them via the *Runtime identifiers* table in each plugin's
+  `CLAUDE.md`.
+- **Daily leak scan.** [`.security/scan.py`](.security/scan.py) scans the working tree **and the
+  full git history** for secrets and reintroduced internal identifiers. A scheduled task runs it
+  daily and DMs Sean only on new findings; run it manually any time with
+  `python3 .security/scan.py`. See [`.security/README.md`](.security/README.md).
+
+Infra-posture review docs (`SECURITY_REVIEW.md`) are gitignored and kept out of the public source.
+
+---
+
 ## For Sean: how this repo works
 
 This monorepo is the **single source of truth** for all InsideDesk Claude plugins.
@@ -95,6 +118,8 @@ freely; release deliberately.
 id-claude-plugin-mono/
 ├── .claude-plugin/
 │   └── marketplace.json        # the catalog
+├── .security/                  # daily leak scanner (scan.py) + baseline
+├── config/                     # runtime identifiers: *.example.json (tracked) + *.local.json (gitignored)
 ├── README.md
 └── plugins/
     ├── id-claude-shared/

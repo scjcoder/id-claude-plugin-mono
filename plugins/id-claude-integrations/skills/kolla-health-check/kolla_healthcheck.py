@@ -27,8 +27,42 @@ import urllib.parse
 import urllib.request
 from typing import Any, Dict, List, Optional
 
+def _id_config():
+    """Resolve non-secret runtime identifiers. Lookup order per key: env var, then
+    config/insidedesk.local.json (walking up to the repo root), then the macOS Keychain
+    (account "insidedesk", service "insidedesk-runtime-config"), then the placeholder.
+    The Keychain fallback lets scripts resolve values even when run from an installed
+    plugin location outside the monorepo. Real values never live in the public source."""
+    cfg, d = {}, os.path.dirname(os.path.abspath(__file__))
+    for _ in range(8):
+        p = os.path.join(d, "config", "insidedesk.local.json")
+        if os.path.isfile(p):
+            try:
+                cfg = json.load(open(p))
+            except Exception:
+                pass
+            break
+        nd = os.path.dirname(d)
+        if nd == d:
+            break
+        d = nd
+    if not cfg:
+        try:
+            import subprocess
+            out = subprocess.run(
+                ["security", "find-generic-password", "-a", "insidedesk",
+                 "-s", "insidedesk-runtime-config", "-w"],
+                capture_output=True, text=True)
+            if out.returncode == 0 and out.stdout.strip():
+                cfg = json.loads(out.stdout.strip())
+        except Exception:
+            pass
+    return lambda key, env, default: os.environ.get(env) or cfg.get(key) or default
+
+_idc = _id_config()
+
 KOLLA_BASE = "https://api.getkolla.com/connect/v1"
-SLACK_USER_ID = "<SLACK_USER_SEAN>"  # Sean (dentalflow.slack.com)
+SLACK_USER_ID = _idc("slack_user_sean", "SLACK_USER_SEAN", "<SLACK_USER_SEAN>")  # Sean
 TIMEOUT = 30
 
 

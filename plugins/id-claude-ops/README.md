@@ -55,3 +55,13 @@ commits, and pushes. Teammates receive the update on their next "Update" in
 Customize → Plugins.
 
 See `CLAUDE.md` for full developer docs.
+
+
+## Configuration
+
+Non-secret runtime identifiers (AWS account id, hostnames, HubSpot portal id, Slack ids)
+are read from `config/insidedesk.local.json` at the monorepo root (gitignored). Source
+files use placeholders like `<AWS_ACCOUNT_ID>`; copy `config/insidedesk.example.json` to
+`config/insidedesk.local.json` and fill in the real values. Secrets (API tokens/keys) are
+never stored here — they come from the macOS Keychain / AWS Secrets Manager via the
+`get-secret` skill. See the repo-root `README.md` and `config/README.md`.

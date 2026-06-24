@@ -17,6 +17,12 @@ __pycache__/
 .security-scan/
 .windsurf/
 
+# Security scanner output (the scanner itself in .security/ IS tracked)
+.security/reports/
+
+# Infra-posture review docs — describe internal weaknesses; keep local, not public
+SECURITY_REVIEW.md
+
 # Terraform (infra lives in the standalone repos, not here)
 infra/
 *.tfstate

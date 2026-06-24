@@ -1,0 +1,785 @@
+{
+  "updated": "2026-06-24T14:34:06Z",
+  "accepted": [
+    {
+      "fp": "726c97a29cf9c138",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/CLAUDE.md:98",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "726c97a29cf9c138",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/CLAUDE.md:99",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "758eadcdde35175a",
+      "rule": "aws_sso_portal",
+      "location": "plugins/id-claude-integrations/CLAUDE.md:100",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "726c97a29cf9c138",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/CLAUDE.md:104",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "30318bddae268cee",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/docs/changelog.md:41",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "90b57a5dc8ecd4ad",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/_shared/slack-upload.py:16",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c7c2b629bbd3c747",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/_shared/slack-upload.py:17",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "90b57a5dc8ecd4ad",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/_shared/slack-upload.py:20",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "90b57a5dc8ecd4ad",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/_shared/slack-upload.py:28",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "77f3d36f8b7ecf6e",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/skills/_shared/slack-upload.py:29",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "13c6d4b4cce80cc0",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/skills/aws-login/SKILL.md:4",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "506a47d6a31c6559",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/kolla-health-check/SKILL.md:72",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "506a47d6a31c6559",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/kolla-health-check/SKILL.md:157",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "bc49255274ae663a",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/kolla-health-check/kolla_healthcheck.py:31",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "aa24aeb391930ce1",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/verify-claim-ticket/SKILL.md:24",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "aa24aeb391930ce1",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/verify-claim-ticket/SKILL.md:49",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "186531f123e90354",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/skills/verify-claim-ticket/SKILL.md:78",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "186531f123e90354",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/skills/verify-claim-ticket/SKILL.md:113",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "aa24aeb391930ce1",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-integrations/skills/verify-claim-ticket/SKILL.md:249",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "186531f123e90354",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-integrations/skills/verify-claim-ticket/SKILL.md:258",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "0ee2d7ccf58246d8",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-ops/CLAUDE.md:108",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "0ee2d7ccf58246d8",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-ops/CLAUDE.md:109",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "428a35237629f7c7",
+      "rule": "aws_sso_portal",
+      "location": "plugins/id-claude-ops/CLAUDE.md:110",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "0ee2d7ccf58246d8",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-ops/CLAUDE.md:114",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "44110e53ee13beef",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-ops/docs/changelog.md:47",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "5749b4992968e008",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/_shared/slack-upload.py:16",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "15872795381a9c2e",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/_shared/slack-upload.py:17",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "5749b4992968e008",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/_shared/slack-upload.py:20",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "5749b4992968e008",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/_shared/slack-upload.py:28",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "00f5ada85e229cae",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-ops/skills/_shared/slack-upload.py:29",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "516544f7cfc6bda1",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-ops/skills/aws-login/SKILL.md:4",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "754c09f2af8a7f62",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/bitwerx-jira-ticket/SKILL.md:84",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "344bb95809771ffc",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/cancellation-ticket/SKILL.md:37",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "6ef716054f50405e",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-ops/skills/cancellation-ticket/SKILL.md:341",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "344bb95809771ffc",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/cancellation-ticket/SKILL.md:391",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "5b07156fef7c3967",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/check-422-tax-ids/SKILL.md:40",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "5b07156fef7c3967",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/check-422-tax-ids/SKILL.md:117",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "e21a22dcdf7f3d23",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-ops/skills/client-offboarding/SKILL.md:41",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "e21a22dcdf7f3d23",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-ops/skills/client-offboarding/SKILL.md:83",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "e21a22dcdf7f3d23",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-ops/skills/client-offboarding/SKILL.md:190",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "b7b50289ca3c2c71",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/create-422-tickets/SKILL.md:38",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "b7b50289ca3c2c71",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/create-422-tickets/SKILL.md:804",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "b7b50289ca3c2c71",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/create-422-tickets/SKILL.md:837",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "7f37ec2427c3181c",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/create-kolla-invite/SKILL.md:54",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "7f37ec2427c3181c",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/create-kolla-invite/SKILL.md:60",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "26be7c9d3ca40fc2",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/draft-422-client-email/SKILL.md:33",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "26be7c9d3ca40fc2",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/draft-422-client-email/SKILL.md:324",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "26be7c9d3ca40fc2",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/draft-422-client-email/SKILL.md:342",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "219e6ec73427a1ec",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/hubspot-ticket-generator/SKILL.md:10",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "fba69293d941834b",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/hubspot-ticket-generator/SKILL.md:42",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "219e6ec73427a1ec",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/hubspot-ticket-generator/SKILL.md:50",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "f9e9a5e3ac59d112",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-ops/skills/hubspot-ticket-generator/SKILL.md:162",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "f9e9a5e3ac59d112",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-ops/skills/hubspot-ticket-generator/SKILL.md:352",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "fba69293d941834b",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/hubspot-ticket-generator/SKILL.md:359",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:31",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:32",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:33",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:127",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:128",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:129",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:145",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:146",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "89d6dc4e4adbc019",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/insidedesk-facility-entry/SKILL.md:147",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "762f602c2605661d",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/mb2-install-ticket/SKILL.md:33",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "762f602c2605661d",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/mb2-install-ticket/SKILL.md:227",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "762f602c2605661d",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/mb2-install-ticket/SKILL.md:239",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "9a7c13494d42c906",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/mb2-monday-to-ge/SKILL.md:30",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "1d36a0722405fd8c",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/mb2-monday-to-ge/SKILL.md:33",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "9a7c13494d42c906",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/mb2-monday-to-ge/SKILL.md:350",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "1d36a0722405fd8c",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/mb2-monday-to-ge/SKILL.md:488",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "1d36a0722405fd8c",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-ops/skills/mb2-monday-to-ge/SKILL.md:494",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "3185db6069eb97c2",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/sync-status/SKILL.md:23",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "3185db6069eb97c2",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-ops/skills/sync-status/SKILL.md:54",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "40e6f45dd323be41",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-reporting/CLAUDE.md:95",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "40e6f45dd323be41",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-reporting/CLAUDE.md:96",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "7d9bd3aa399d1e88",
+      "rule": "aws_sso_portal",
+      "location": "plugins/id-claude-reporting/CLAUDE.md:97",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "40e6f45dd323be41",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-reporting/CLAUDE.md:101",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "6456118409266e53",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-reporting/docs/changelog.md:47",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "0113158c4e15debd",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-reporting/docs/changelog.md:248",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "2983f6c3da0bd4d9",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/422-tax-id-report/SKILL.md:44",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "2983f6c3da0bd4d9",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/422-tax-id-report/SKILL.md:232",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "31a8694756bf01f0",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-reporting/skills/_shared/slack-upload.py:17",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "eae60202740f21da",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-reporting/skills/_shared/slack-upload.py:18",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "31a8694756bf01f0",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-reporting/skills/_shared/slack-upload.py:22",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "31a8694756bf01f0",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-reporting/skills/_shared/slack-upload.py:30",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "a2dc427129a85d84",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/ascend-activity-report/SKILL.md:78",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "f441fbc47735f900",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/ascend-activity-report/SKILL.md:89",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "a2dc427129a85d84",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/ascend-activity-report/SKILL.md:94",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "a2dc427129a85d84",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/ascend-activity-report/SKILL.md:142",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "f441fbc47735f900",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/ascend-activity-report/SKILL.md:167",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "a4dde8de8d68d351",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-reporting/skills/aws-login/SKILL.md:4",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "cfdf0d0eb57f78fa",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/full-historical-client-report/SKILL.md:191",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "f7c802aefc961aa3",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/full-historical-client-report/SKILL.md:213",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "f7c802aefc961aa3",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/full-historical-client-report/SKILL.md:254",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "e97ced22f8946ad3",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-reporting/skills/full-historical-client-report/SKILL.md:333",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "e97ced22f8946ad3",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-reporting/skills/full-historical-client-report/SKILL.md:353",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "e97ced22f8946ad3",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-reporting/skills/full-historical-client-report/SKILL.md:368",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "e97ced22f8946ad3",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-reporting/skills/full-historical-client-report/SKILL.md:377",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "7baf4229e1f3ecc7",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-reporting/skills/install-team-summary/SKILL.md:179",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "638c73048187ec8a",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-reporting/skills/morning-brief/SKILL.md:61",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "65b7e36c5a915f73",
+      "rule": "hubspot_portal_id",
+      "location": "plugins/id-claude-reporting/skills/morning-brief/SKILL.md:113",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "518a2a50756dca84",
+      "rule": "internal_hostname",
+      "location": "plugins/id-claude-reporting/skills/snapshot-error-report/SKILL.md:46",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "1dd81334b7f982c0",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/CLAUDE.md:91",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "1dd81334b7f982c0",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/CLAUDE.md:92",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "5c603d3ee13c276f",
+      "rule": "aws_sso_portal",
+      "location": "plugins/id-claude-shared/CLAUDE.md:93",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "1dd81334b7f982c0",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/CLAUDE.md:97",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "bd3faffd49bcfd71",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/README.md:20",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "4888f4b17aedc7c8",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/docs/changelog.md:52",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "bcc5a667b109f9fb",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-shared/skills/_shared/slack-setup.md:37",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "aec10f89bc7e46b6",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-shared/skills/_shared/slack-setup.md:39",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "bcc5a667b109f9fb",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-shared/skills/_shared/slack-setup.md:48",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "bcc5a667b109f9fb",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-shared/skills/_shared/slack-setup.md:71",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "bcc5a667b109f9fb",
+      "rule": "slack_id",
+      "location": "plugins/id-claude-shared/skills/_shared/slack-setup.md:136",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:4",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:40",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:46",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:47",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "559320575de36be2",
+      "rule": "aws_sso_portal",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:48",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:58",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:61",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:68",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "559320575de36be2",
+      "rule": "aws_sso_portal",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:71",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "559320575de36be2",
+      "rule": "aws_sso_portal",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:75",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:86",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:93",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:94",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:105",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "c34349d26a142ca4",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/aws-login/SKILL.md:112",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "288b7f0e4ff87462",
+      "rule": "aws_account_id",
+      "location": "plugins/id-claude-shared/skills/export-secrets-bundle/SKILL.md:78",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "d317db15dd6368f8",
+      "rule": "slack_id",
+      "location": "release.sh:41",
+      "note": "accepted by --update-baseline"
+    }
+  ]
+}

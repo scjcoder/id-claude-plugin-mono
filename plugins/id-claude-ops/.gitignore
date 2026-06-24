@@ -1,0 +1,25 @@
+# Built plugin archives
+*.plugin
+
+# Data exports
+*.xlsx
+*.xls
+
+# Archived reports
+reports/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
+
+# Local env
+.env.local
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup

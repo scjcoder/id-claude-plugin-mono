@@ -1,0 +1,17 @@
+{
+  "name": "id-claude-integrations",
+  "version": "1.2.2",
+  "description": "InsideDesk integrations plugin \u2014 client management, install ticketing, offboarding, HubSpot workflows, and AWS authentication.",
+  "author": {
+    "name": "Sean Johnson",
+    "email": "sean.johnson@insidedesk.com"
+  },
+  "keywords": [
+    "insidedesk",
+    "hubspot",
+    "client",
+    "install",
+    "offboarding",
+    "aws"
+  ]
+}

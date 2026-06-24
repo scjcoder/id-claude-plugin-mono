@@ -1,0 +1,30 @@
+{
+  "name": "insidedesk-tools",
+  "owner": {
+    "name": "Sean Johnson",
+    "email": "sean.johnson@insidedesk.com"
+  },
+  "description": "InsideDesk internal Claude plugins — ops, reporting, integrations, and shared auth.",
+  "plugins": [
+    {
+      "name": "id-claude-shared",
+      "source": "./plugins/id-claude-shared",
+      "description": "Shared foundations — AWS login, OS-aware secret retrieval, secrets bundle import/export, skill logging. Every other InsideDesk plugin depends on this one."
+    },
+    {
+      "name": "id-claude-ops",
+      "source": "./plugins/id-claude-ops",
+      "description": "Client ops — offboarding, install ticketing, communications, HubSpot workflows, Bitwerx/DataCo, sync status, and AWS auth."
+    },
+    {
+      "name": "id-claude-reporting",
+      "source": "./plugins/id-claude-reporting",
+      "description": "Reporting — 422 Tax ID report, PMS Out-of-Sync report, Power BI export, GoldenEye snapshot errors, install team summary, morning brief."
+    },
+    {
+      "name": "id-claude-integrations",
+      "source": "./plugins/id-claude-integrations",
+      "description": "Integrations — Kolla account management/health checks, DataCo SupportCo API, claim ticket verification, and AWS auth."
+    }
+  ]
+}

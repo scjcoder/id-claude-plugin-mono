@@ -25,6 +25,11 @@
       "name": "id-claude-integrations",
       "source": "./plugins/id-claude-integrations",
       "description": "Integrations — Kolla account management/health checks, DataCo SupportCo API, claim ticket verification, and AWS auth."
+    },
+    {
+      "name": "coding-quality",
+      "source": "./plugins/coding-quality",
+      "description": "Claude-facing coding standards — universal clean-code, git, security, error-handling, testing, and documentation rules with MUST/SHOULD/MAY tiers, plus Python, Python on AWS (boto3), Terraform/AWS, AWS Lambda (Node.js), GitLab CI (OIDC trust-policy pinning), and web-frontend stack overlays, and pre-commit/pre-PR/new-project checklists."
     }
   ]
 }

@@ -1,0 +1,48 @@
+# .pre-commit-config.yaml — canonical pre-commit hooks
+# Author:       Sean Johnson <sean@scj.net>
+# Purpose:      Baseline pre-commit config for Python projects
+# Last updated: 2026-05-30
+# Version:      1.0.0
+#
+# Usage: copy to your project root, run `pre-commit install`
+
+repos:
+  # Ruff — fast Python linter and formatter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  # Black — optional fallback formatter (if not using ruff format)
+  # - repo: https://github.com/psf/black
+  #   rev: 24.4.0
+  #   hooks:
+  #     - id: black
+
+  # Pre-commit hooks — general file hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+
+  # detect-secrets — secret scanning (baseline-friendly)
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: [--baseline, .secrets.baseline]
+        exclude: package.lock.json
+
+# Alternative: gitleaks (uncomment and remove detect-secrets if preferred)
+# - repo: https://github.com/gitleaks/gitleaks
+#   rev: v8.18.0
+#   hooks:
+#     - id: gitleaks

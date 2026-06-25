@@ -1,0 +1,4 @@
+{ "Addresses": [
+  { "PublicIp":"52.1.2.3", "AllocationId":"eipalloc-01", "AssociationId":null },
+  { "PublicIp":"52.4.5.6", "AllocationId":"eipalloc-02", "AssociationId":"eipassoc-99" }
+] }

@@ -1,0 +1,20 @@
+{
+  "name": "opentofu-secure",
+  "version": "1.9.0",
+  "description": "Hardened AWS toolkit: generate OpenTofu/Terraform config from security-baked templates (S3 native-lock state, least-privilege IAM/GitLab-OIDC, KMS, mandatory tagging, OIDC CI), plus a report-only drift & cost loop that audits those same guardrails. WAF/SecurityHub/GuardDuty excluded on cost grounds.",
+  "author": {
+    "name": "Sean Johnson",
+    "email": "sean@scj.net"
+  },
+  "keywords": [
+    "opentofu",
+    "terraform",
+    "aws",
+    "iac",
+    "security",
+    "templates",
+    "gitlab-oidc",
+    "cost-optimization",
+    "drift-detection"
+  ]
+}

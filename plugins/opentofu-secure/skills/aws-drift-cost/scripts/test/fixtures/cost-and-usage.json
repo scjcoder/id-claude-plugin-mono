@@ -1,0 +1,349 @@
+{
+  "ResultsByTime": [
+    {
+      "TimePeriod": {
+        "Start": "2026-06-14",
+        "End": "2026-06-15"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "2.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.1000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-06-15",
+        "End": "2026-06-16"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "2.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.1000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-06-16",
+        "End": "2026-06-17"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "2.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.1000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-06-17",
+        "End": "2026-06-18"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "2.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.1000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-06-18",
+        "End": "2026-06-19"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "2.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.1000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-06-19",
+        "End": "2026-06-20"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "2.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.1000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-06-20",
+        "End": "2026-06-21"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "2.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.1000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    },
+    {
+      "TimePeriod": {
+        "Start": "2026-06-21",
+        "End": "2026-06-22"
+      },
+      "Total": {},
+      "Groups": [
+        {
+          "Keys": [
+            "Amazon Elastic Compute Cloud - Compute"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "12.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "Amazon Simple Storage Service"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "1.0000000000",
+              "Unit": "USD"
+            }
+          }
+        },
+        {
+          "Keys": [
+            "AWS Cost Explorer"
+          ],
+          "Metrics": {
+            "UnblendedCost": {
+              "Amount": "0.4000000000",
+              "Unit": "USD"
+            }
+          }
+        }
+      ],
+      "Estimated": false
+    }
+  ],
+  "DimensionValueAttributes": []
+}

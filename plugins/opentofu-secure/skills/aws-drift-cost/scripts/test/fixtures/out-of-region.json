@@ -1,0 +1,6 @@
+{
+  "ResourceTagMappingList": [
+    { "ResourceARN": "arn:aws:lambda:ap-south-1:123456789012:function:stray-fn", "Tags": [] },
+    { "ResourceARN": "arn:aws:dynamodb:ap-south-1:123456789012:table/stray-table", "Tags": [] }
+  ]
+}

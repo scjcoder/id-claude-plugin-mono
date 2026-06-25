@@ -1,0 +1,5 @@
+[
+  { "type":"s3-bucket", "name":"auto.scj.net", "issues":["public-access-block incomplete"] },
+  { "type":"s3-bucket", "name":"scj-dev-public-oops", "issues":["public-access-block incomplete"] },
+  { "type":"s3-bucket", "name":"assets-notion-tenpips", "issues":["public-access-block incomplete"] }
+]

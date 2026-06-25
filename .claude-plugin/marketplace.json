@@ -30,6 +30,11 @@
       "name": "coding-quality",
       "source": "./plugins/coding-quality",
       "description": "Claude-facing coding standards — universal clean-code, git, security, error-handling, testing, and documentation rules with MUST/SHOULD/MAY tiers, plus Python, Python on AWS (boto3), Terraform/AWS, AWS Lambda (Node.js), GitLab CI (OIDC trust-policy pinning), and web-frontend stack overlays, and pre-commit/pre-PR/new-project checklists."
+    },
+    {
+      "name": "opentofu-secure",
+      "source": "./plugins/opentofu-secure",
+      "description": "Hardened AWS toolkit: a generator skill that scaffolds security-baked OpenTofu/Terraform config (S3, IAM/GitLab-OIDC, Route53/ACM, observability, VPC, Lambda, DynamoDB, state-bootstrap), and a report-only detective skill that audits a personal AWS account for cost anomalies, untagged resources, public-access/encryption drift, and idle/orphaned resources."
     }
   ]
 }

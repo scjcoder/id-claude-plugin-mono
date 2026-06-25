@@ -1,0 +1,5 @@
+{
+  "_comment": "Runtime identifiers for the SCJ personal/dev AWS account, used by the opentofu-secure plugin. Copy this file to 'scj.local.json' (gitignored) and fill in the REAL values. Skills and scripts resolve placeholders like <SCJ_AWS_ACCOUNT_ID> from the local file at runtime; the public source carries placeholders only. Not a secret (no API tokens/keys here) — this is a non-secret operational identifier kept out of the public source. Personal-machine-only config: unlike insidedesk.local.json, this is not backed up to the macOS Keychain.",
+  "scj_aws_account_id": "<SCJ_AWS_ACCOUNT_ID>",
+  "scj_aws_profile": "Administrator-<SCJ_AWS_ACCOUNT_ID>"
+}

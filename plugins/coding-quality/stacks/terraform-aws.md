@@ -17,8 +17,8 @@ Layered on top of all core rules. Adds IaC and AWS requirements.
 
 ## Accounts (this environment)
 
-- Dev / SCJ account: `Administrator-220697294125` — default for non-prod work.
-- Prod / InsideDesk account: `Administrator-982534385600` — apply the production safety checklist before any mutating command.
+- Dev / SCJ account: `Administrator-<SCJ_AWS_ACCOUNT_ID>` — default for non-prod work. Resolve `<SCJ_AWS_ACCOUNT_ID>` from `config/scj.local.json`.
+- Prod / InsideDesk account: `Administrator-<AWS_ACCOUNT_ID>` — apply the production safety checklist before any mutating command. Resolve `<AWS_ACCOUNT_ID>` from `config/insidedesk.local.json`.
 - **MUST** confirm which account is targeted before `apply`; never assume prod.
 
 ## Hygiene

@@ -1,0 +1,5 @@
+[
+  { "name":"auto.scj.net", "target":"s3-website-us-east-1.amazonaws.com" },
+  { "name":"www.scj.net", "target":"d111111abcdef8.cloudfront.net" },
+  { "name":"assets.tenpips.com", "target":"assets-notion-tenpips.s3.amazonaws.com" }
+]

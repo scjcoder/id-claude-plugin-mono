@@ -22,6 +22,7 @@ GitHub (public mirror, used by Cowork): `https://github.com/scjcoder/id-claude-p
 | `id-claude-reporting` | Reporting — 422 Tax ID, PMS Out-of-Sync, Power BI export, snapshot errors, install summary, morning brief. |
 | `id-claude-integrations` | Integrations — Kolla, DataCo SupportCo API, claim ticket verification. |
 | `coding-quality` | Coding standards — clean-code, git, security, error-handling, testing, docs rules (MUST/SHOULD/MAY tiers) plus Python/AWS/Terraform/GitLab-CI/web overlays and pre-commit/PR/new-project checklists. |
+| `opentofu-secure` | Hardened AWS toolkit — generator skill for security-baked OpenTofu/Terraform templates (S3, IAM/OIDC, Route53/ACM, observability, VPC, Lambda, DynamoDB) plus a report-only drift/cost-audit skill. |
 
 ---
 
@@ -31,7 +32,7 @@ GitHub (public mirror, used by Cowork): `https://github.com/scjcoder/id-claude-p
 2. Go to the **Plugins** tab.
 3. Under **Personal plugins**, click **"+"** → **Add marketplace** → **Add from a repository**.
 4. Enter the repository: `https://github.com/scjcoder/id-claude-plugin-mono` (this is the public GitHub mirror — the GitLab repo is private and won't work directly in Cowork).
-5. Install the plugins you need. Most people want `id-claude-shared` plus whichever of ops / reporting / integrations applies to their role. `coding-quality` is useful to anyone writing code with Claude.
+5. Install the plugins you need. Most people want `id-claude-shared` plus whichever of ops / reporting / integrations applies to their role. `coding-quality` is useful to anyone writing code with Claude. `opentofu-secure` is useful to anyone provisioning AWS infrastructure.
 
 ## For teammates: get the latest version
 
@@ -127,7 +128,8 @@ id-claude-plugin-mono/
     ├── id-claude-ops/
     ├── id-claude-reporting/
     ├── id-claude-integrations/
-    └── coding-quality/
+    ├── coding-quality/
+    └── opentofu-secure/
 ```
 
 > The per-plugin `build-plugin.sh` archive flow has been retired in this monorepo —

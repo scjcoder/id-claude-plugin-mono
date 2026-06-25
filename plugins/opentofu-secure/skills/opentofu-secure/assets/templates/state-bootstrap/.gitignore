@@ -1,0 +1,8 @@
+# Bootstrap uses LOCAL state until migrated. Never commit state or tfvars.
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.DS_Store

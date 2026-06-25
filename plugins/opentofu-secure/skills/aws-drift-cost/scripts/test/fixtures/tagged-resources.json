@@ -1,0 +1,9 @@
+{
+  "ResourceTagMappingList": [
+    { "ResourceARN": "arn:aws:s3:::scj-dev-app-assets",
+      "Tags": [ {"Key":"Project","Value":"scj"}, {"Key":"Environment","Value":"dev"},
+                {"Key":"Owner","Value":"sean"}, {"Key":"ManagedBy","Value":"opentofu"} ] },
+    { "ResourceARN": "arn:aws:dynamodb:us-east-1:123456789012:table/legacy-notes",
+      "Tags": [ {"Key":"Project","Value":"scj"}, {"Key":"Environment","Value":"dev"} ] }
+  ]
+}

@@ -71,14 +71,29 @@ GENERIC_FP_RE = re.compile(
 # are loaded from the gitignored config so this scanner source carries none of
 # them; if the config is absent (e.g. a fresh public clone) identifier scanning
 # is simply skipped and only the secret rules run.
-def build_identifier_rules():
-    cfg_path = os.path.join(REPO, "config", "insidedesk.local.json")
+def _load_config(filename: str) -> dict:
+    cfg_path = os.path.join(REPO, "config", filename)
     try:
         with open(cfg_path) as f:
-            cfg = json.load(f)
+            return json.load(f)
     except (OSError, ValueError):
-        return []
-    specs = [
+        return {}
+
+
+def _identifier_rules_from(cfg: dict, specs: list[tuple[str, str, str]]):
+    rules = []
+    for rule, sev, key in specs:
+        val = cfg.get(key)
+        if val and "<" not in val:
+            rules.append((rule, sev, re.compile(re.escape(val))))
+    return rules
+
+
+def build_identifier_rules():
+    insidedesk_cfg = _load_config("insidedesk.local.json")
+    scj_cfg = _load_config("scj.local.json")
+
+    rules = _identifier_rules_from(insidedesk_cfg, [
         ("aws_account_id",    "medium", "aws_account_id"),
         ("aws_sso_portal",    "medium", "aws_sso_portal"),
         ("internal_hostname", "medium", "goldeneye_host"),
@@ -87,12 +102,10 @@ def build_identifier_rules():
         ("slack_id",          "low",    "slack_user_sean"),
         ("slack_id",          "low",    "slack_dm_sean"),
         ("slack_id",          "low",    "slack_chan_claim_feedback"),
-    ]
-    rules = []
-    for rule, sev, key in specs:
-        val = cfg.get(key)
-        if val and "<" not in val:
-            rules.append((rule, sev, re.compile(re.escape(val))))
+    ])
+    rules += _identifier_rules_from(scj_cfg, [
+        ("scj_aws_account_id", "medium", "scj_aws_account_id"),
+    ])
     return rules
 
 

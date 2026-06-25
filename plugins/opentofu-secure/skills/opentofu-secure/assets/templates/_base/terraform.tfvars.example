@@ -1,0 +1,9 @@
+# Copy to terraform.tfvars (gitignored) and fill in. Never commit real tfvars.
+project_name = "my-project"
+environment  = "dev"
+aws_region   = "us-east-1"
+owner        = "sean.johnson@insidedesk.com"
+
+common_tags = {
+  CostCenter = "engineering"
+}

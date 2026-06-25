@@ -1,0 +1,91 @@
+# OpenTofu pipeline: OIDC auth (no static keys), validate -> plan (MR) -> apply (manual, main).
+# Trivy scans config for HIGH/CRITICAL misconfig on every MR.
+stages:
+  - validate
+  - plan
+  - apply
+
+variables:
+  AWS_DEFAULT_REGION: us-east-1
+  TF_ROOT: ${CI_PROJECT_DIR}
+  TF_IN_AUTOMATION: "true"
+  TF_INPUT: "false"
+
+default:
+  image: ghcr.io/opentofu/opentofu:1.10
+  retry:
+    max: 1
+    when:
+      - runner_system_failure
+      - stuck_or_timeout_failure
+
+.aws_oidc_auth:
+  id_tokens:
+    GITLAB_OIDC_TOKEN:
+      aud: https://gitlab.com
+  before_script:
+    - |
+      set -euo pipefail
+      export AWS_WEB_IDENTITY_TOKEN_FILE="$(mktemp)"
+      echo "${GITLAB_OIDC_TOKEN}" > "${AWS_WEB_IDENTITY_TOKEN_FILE}"
+      export AWS_ROLE_SESSION_NAME="gitlab-ci-${CI_JOB_NAME}-${CI_JOB_ID}"
+
+.tofu_base:
+  extends: .aws_oidc_auth
+  cache:
+    key:
+      files:
+        - .terraform.lock.hcl
+    paths:
+      - .terraform
+    policy: pull-push
+
+validate:
+  extends: .tofu_base
+  stage: validate
+  script:
+    - tofu fmt -check -recursive
+    - tofu init -backend=false
+    - tofu validate
+
+trivy_scan:
+  stage: validate
+  image: aquasec/trivy:latest
+  script:
+    - trivy config "${TF_ROOT}" --exit-code 1 --severity HIGH,CRITICAL
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+plan:
+  extends: .tofu_base
+  stage: plan
+  variables:
+    AWS_ROLE_ARN: ${AWS_ROLE_ARN_DEV}
+  script:
+    - |
+      set -euo pipefail
+      tofu init -backend-config=backend.dev.hcl
+      tofu plan -lock=true -out=tfplan
+  artifacts:
+    paths:
+      - tfplan
+    expire_in: 1 day
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+apply:
+  extends: .tofu_base
+  stage: apply
+  variables:
+    AWS_ROLE_ARN: ${AWS_ROLE_ARN_PROD}
+  script:
+    - |
+      set -euo pipefail
+      tofu init -backend-config=backend.prod.hcl
+      tofu apply -lock=true -auto-approve tfplan
+  dependencies:
+    - plan
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: manual
+  timeout: 30m

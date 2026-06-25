@@ -1,4 +1,29 @@
 {
-  "updated": "2026-06-24T14:58:56Z",
-  "accepted": []
+  "updated": "2026-06-25T21:42:49Z",
+  "accepted": [
+    {
+      "fp": "ab0aa11ca8935c85",
+      "rule": "generic_secret_assign",
+      "location": "plugins/coding-quality/rules/03-security.md:17",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "8b35705c5f05031b",
+      "rule": "generic_secret_assign",
+      "location": "plugins/coding-quality/skills/clean-code-pass/SKILL.md:177",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "2b0445a96d8ca6ca",
+      "rule": "generic_secret_assign",
+      "location": "<history>plugins/coding-quality/rules/03-security.md@e04571a6:17",
+      "note": "accepted by --update-baseline"
+    },
+    {
+      "fp": "8469803864b74b75",
+      "rule": "generic_secret_assign",
+      "location": "<history>plugins/coding-quality/skills/clean-code-pass/SKILL.md@3bab4669:177",
+      "note": "accepted by --update-baseline"
+    }
+  ]
 }

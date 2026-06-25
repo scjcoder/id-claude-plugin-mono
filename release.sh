@@ -71,10 +71,15 @@ fi
 
 ENTRY="$(printf '## [%s] - %s\n\n### %s\n- %s\n' "$VERSION" "$DATE" "$TYPE" "$MESSAGE")"
 
-awk -v entry="$ENTRY" '
-  !done && /^## \[/ { print entry "\n"; done=1 }
+# Pass ENTRY via the environment, not -v: BSD awk (macOS default, "awk version
+# 20200816") silently fails to parse a -v string containing an embedded
+# newline ("awk: newline in string ... at source line 1") and aborts before
+# producing output, leaving the changelog untouched even though the rest of
+# the pipeline reports success. ENVIRON[] does not have this limitation.
+ENTRY="$ENTRY" awk '
+  !done && /^## \[/ { print ENVIRON["ENTRY"] "\n"; done=1 }
   { print }
-  END { if (!done) print "\n" entry }
+  END { if (!done) print "\n" ENVIRON["ENTRY"] }
 ' "$CHANGELOG" > "$CHANGELOG.tmp" && mv "$CHANGELOG.tmp" "$CHANGELOG"
 echo "✓ updated $CHANGELOG"
 

@@ -8,6 +8,7 @@ ticketing, client offboarding, install coordination, communications, and AWS aut
 | Skill | Description |
 |---|---|
 | `aws-login` | SSO login to the InsideDesk AWS account. Auto-triggers on credential errors. |
+| `chrome-test` | Test that the Claude in Chrome tool suite is available and functional. Validates browser automation capabilities. |
 | `client-comms` | Draft client emails, decision memos, and status updates in Sean's voice. |
 | `client-offboarding` | End-to-end cancellation workflow from a HubSpot cancellation ticket URL — full and partial, with Ascend API REMOVE tab output. |
 | `client-pms-summary` | Count active locations grouped by PMS type for a client. |
@@ -27,6 +28,7 @@ id-claude-ops/
 └── skills/
     ├── _shared/                 # Shared HubSpot/Slack helpers
     ├── aws-login/
+    ├── chrome-test/             # Test Chrome tool availability
     ├── client-comms/
     ├── client-offboarding/
     ├── client-pms-summary/

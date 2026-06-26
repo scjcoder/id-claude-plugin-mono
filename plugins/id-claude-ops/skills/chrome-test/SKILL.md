@@ -31,7 +31,6 @@ The test is minimal, non-destructive, and safe to run multiple times.
 1. **Load Chrome tools** by fetching their schemas via ToolSearch:
    - `mcp__Claude_in_Chrome__navigate`
    - `mcp__Claude_in_Chrome__get_page_text`
-   - `mcp__Claude_in_Chrome__tabs_close_mcp` (for cleanup)
 
 2. **Navigate** to https://example.com
    - Check for successful navigation response
@@ -41,8 +40,9 @@ The test is minimal, non-destructive, and safe to run multiple times.
    - Use the tab ID from step 2
    - Verify page content is readable
 
-4. **Close the test tab** (cleanup)
-   - Use the tab ID from step 2 to close the browser tab
+4. **Close the test tab** via chrome-cleanup helper
+   - Call the `chrome-cleanup` skill with the tabId from step 2
+   - This is a lightweight helper that handles tab closure
    - Ensure no persistent browser state is left behind
 
 5. **Report results** with:
@@ -56,10 +56,10 @@ The test is minimal, non-destructive, and safe to run multiple times.
 
 ## Success Criteria
 
-✅ **All tools are available** — ToolSearch successfully loaded navigate, get_page_text, and tabs_close_mcp
+✅ **Core Chrome tools are available** — ToolSearch successfully loaded navigate and get_page_text
 ✅ **Navigation succeeds** — Tab created and URL loaded without errors
 ✅ **Content extraction works** — Page text retrieved and contains expected content (e.g., "Example Domain")
-✅ **Cleanup succeeds** — Test tab closed without errors
+✅ **Cleanup succeeds** — chrome-cleanup helper closes the test tab without errors
 
 ---
 
@@ -74,8 +74,8 @@ The test is minimal, non-destructive, and safe to run multiple times.
 
 ## Implementation Notes
 
-- **Clean cleanup** — Test tab is automatically closed after completion; no browser state left behind
+- **Clean cleanup** — Uses the chrome-cleanup helper skill to close the test tab; no browser state left behind
 - **No side effects** — Test URL is public and read-only; no data is created or modified
 - **Idempotent** — Safe to run multiple times without impact
 - **Quick execution** — Completes in under 5 seconds (including tab cleanup)
-- **Diagnostic value** — Covers all core Chrome tool functionality including resource cleanup
+- **Follows pattern** — Demonstrates best practice for Chrome skills: test → cleanup → report

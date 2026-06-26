@@ -1,6 +1,6 @@
 {
   "name": "id-claude-reporting",
-  "version": "1.9.4",
+  "version": "1.9.5",
   "description": "InsideDesk reporting plugin \u2014 422 Tax ID Error report, PMS Out-of-Sync report, Power BI export, GoldenEye snapshot error report, install team summary, and AWS authentication.",
   "author": {
     "name": "Sean Johnson",

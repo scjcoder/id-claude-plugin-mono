@@ -87,6 +87,50 @@ untracked. Skip tickets in closed stages (stage label "Closed").
 
 ---
 
+## Step 3b — Live verification of active issues
+
+**This step is mandatory. Do not skip it or substitute email context for direct checks.**
+The brief's value depends on showing current state, not what emails implied hours ago.
+
+### a. Bitwerx JIRA tickets
+
+For every Bitwerx JIRA number (format: `DATA-XXXXX`) mentioned in emails or HubSpot ticket
+notes, navigate directly to:
+```
+https://bitwerx.atlassian.net/servicedesk/customer/portal/6/DATA-XXXXX
+```
+Read the page and report the **actual current status** (Open / Waiting for customer / Resolved).
+Do NOT assume the JIRA is still open because the email mentioned it. Tickets can be resolved
+within hours of the email being sent. Report resolved tickets as ✅ resolved with the resolution
+note if visible.
+
+### b. HubSpot tickets for issues mentioned in email
+
+When an email mentions an OOS incident, support issue, or client problem, and your initial
+HubSpot search found no ticket, **try at least two additional searches before declaring it
+untracked**:
+1. Search by facility name only (e.g. "Southern Oak Conway")
+2. Search by client abbreviation or alternate name (e.g. "SGA Dental", "SGA")
+
+Only mark something as untracked after multiple searches return nothing. A false "untracked"
+flag creates unnecessary work.
+
+### c. GoldenEye verification for multi-location install tickets
+
+For any HubSpot install ticket covering multiple locations (e.g. license transfers, group
+installs), **do not leave GoldenEye status as "needs verification."** Actually check each
+location:
+
+1. Search GoldenEye using the facility name search (use `facilitySearch=` URL param, not `search=`)
+2. Navigate to the facility's snapshots tab with a 2-day window:
+   `https://<GOLDENEYE_HOST>/production/admin/facility/<ID>/snapshots?dateFrom=<YESTERDAY>&dateTo=<TODAY>&pageSize=10`
+3. Report ✅ (snapshots exist) or 🔴 (no snapshots / Never) per location inline in the report
+
+If GoldenEye is unreachable or the browser session is not available, note that explicitly
+rather than leaving items unverified.
+
+---
+
 ## Step 4 — Action items
 
 Based on Steps 1–3, surface 2–4 bullets: anything time-sensitive today, pre-meeting prep,

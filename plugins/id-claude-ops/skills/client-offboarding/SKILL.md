@@ -263,9 +263,16 @@ The HubSpot token is already in scope — no need to retrieve it again.
 
 ---
 
-## Step 8 — Log the run
+## Step 8 — Close browser tabs
 
-After Step 7, call the **`skill-logger`** skill with the following payload:
+Before logging, close any browser tabs that were opened during the HubSpot interaction using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation response (if any tabs were opened).
+
+---
+
+## Step 9 — Log the run
+
+After Step 8, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|
@@ -273,6 +280,6 @@ After Step 7, call the **`skill-logger`** skill with the following payload:
 | `status` | `success` if locations were associated and the ticket updated · `partial` if association partially failed or REMOVE tab had null facility IDs · `error` if the skill failed entirely |
 | `summary` | 1–3 sentences: client name, cancellation branch (full/partial), number of locations associated to the ticket, and whether a REMOVE tab block was generated for Ascend API. |
 | `inputs` | `ticket_url={url}` · `cancellation_type={full/partial}` |
-| `outputs` | `locations_offboarded={N}` · `ticket_updated=true` · `remove_tab_generated={true/false}` |
+| `outputs` | `locations_offboarded={N}` · `ticket_updated=true` · `remove_tab_generated={true/false}` · `tabs_closed=true` |
 | `errors` | Any steps that failed (empty dict if none) |
 | `metadata` | `client_name={name}` · `ascend_api={true/false}` |

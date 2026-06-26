@@ -342,9 +342,16 @@ Plain-English summary: total billed, breakdown by section, call out any newly on
 
 ---
 
-## Step 9 — Log the run
+## Step 9 — Close browser tabs
 
-After Step 8, call the **`skill-logger`** skill with the following payload:
+Before logging, close any GoldenEye browser tabs using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation responses.
+
+---
+
+## Step 10 — Log the run
+
+After Step 9, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

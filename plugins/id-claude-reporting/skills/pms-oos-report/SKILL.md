@@ -536,9 +536,16 @@ Keep it brief — the PDF has the details.
 
 ---
 
-## Step 11 — Log the run
+## Step 11 — Close browser tabs
 
-After Step 10 (chat response), call the **`skill-logger`** skill with the following payload:
+Before logging, close any browser tabs (DataCo status check, GoldenEye, etc.) using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation responses.
+
+---
+
+## Step 12 — Log the run
+
+After Step 11, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

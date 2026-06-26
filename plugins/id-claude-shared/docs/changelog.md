@@ -4,6 +4,11 @@ All notable changes to the ID Claude Shared plugin are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.4.4] - 2026-06-26
+
+### Added
+- add Cloudflare R2 secrets to get-secret skill
+
 ## [Unreleased]
 
 ### Security

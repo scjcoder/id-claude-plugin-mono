@@ -1,6 +1,6 @@
 {
   "name": "id-claude-shared",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "InsideDesk shared plugin \u2014 canonical aws-login, OS-aware get-secret skill, and shared HubSpot/Slack setup docs used across all InsideDesk plugins.",
   "author": {
     "name": "Sean Johnson",

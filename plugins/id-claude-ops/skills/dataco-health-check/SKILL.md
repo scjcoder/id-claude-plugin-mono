@@ -148,6 +148,13 @@ placeholder so downstream skills know the check ran.
 
 ---
 
+## Step 5b — Close the browser tab
+
+After extracting all data, close the DataCo status page tab using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation response in Step 1.
+
+---
+
 ## Step 6 — Report to the user (when called standalone)
 
 When triggered directly (not as a sub-step of another skill), respond with:

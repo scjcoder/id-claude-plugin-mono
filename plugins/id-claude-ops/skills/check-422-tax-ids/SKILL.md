@@ -121,9 +121,16 @@ TAXID_CHECK_RESULT:
 
 ---
 
-## Step 6 — Log the run
+## Step 6 — Close the tab
 
-After Step 5, call the **`skill-logger`** skill with the following payload:
+After Step 5, close the GoldenEye tab that was opened in Step 2 using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from the browser navigation response in Step 2.
+
+---
+
+## Step 7 — Log the run
+
+After Step 6, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

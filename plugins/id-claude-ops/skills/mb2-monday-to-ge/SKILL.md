@@ -578,9 +578,16 @@ in sync even if tickets were created in a prior run.
 
 ---
 
-## Step 10 — Log the run
+## Step 10 — Close browser tabs
 
-After Step 9, call the **`skill-logger`** skill with the following payload:
+Before logging, close any Monday Board and GoldenEye tabs that were opened during Steps 3-9 using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation responses.
+
+---
+
+## Step 11 — Log the run
+
+After Step 10, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

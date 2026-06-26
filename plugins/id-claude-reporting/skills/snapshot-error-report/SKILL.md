@@ -311,9 +311,16 @@ Follow with a concise plain-English summary covering:
 
 ---
 
-## Step 9 — Log the run
+## Step 9 — Close browser tabs
 
-After Step 8, call the **`skill-logger`** skill with the following payload:
+Before logging, close the GoldenEye Snapshots tab using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation response in Step 1.
+
+---
+
+## Step 10 — Log the run
+
+After Step 9, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

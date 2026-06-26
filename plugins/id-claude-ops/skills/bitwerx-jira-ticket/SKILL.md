@@ -285,9 +285,17 @@ Confirm completion with:
 
 ---
 
+## Step 9 — Close the tabs
+
+Before logging, close any browser tabs that were opened during Steps 2-8 using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation responses (DataCo SupportCo and JIRA forms).
+If multiple tabs were opened, call chrome-cleanup for each one.
+
+---
+
 ## Step 10 — Log the run
 
-After Step 7, call the **`skill-logger`** skill with the following payload:
+After Step 9, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

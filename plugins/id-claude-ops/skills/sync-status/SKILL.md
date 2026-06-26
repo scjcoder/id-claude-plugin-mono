@@ -107,9 +107,16 @@ A single concise line, for example:
 
 ---
 
-## Step 6 — Log the run
+## Step 6 — Close the tab
 
-After Step 5, call the **`skill-logger`** skill with the following payload:
+After Step 5, close the GoldenEye tab that was opened in Steps 1 and 3 using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from the browser navigation response.
+
+---
+
+## Step 7 — Log the run
+
+After Step 6, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

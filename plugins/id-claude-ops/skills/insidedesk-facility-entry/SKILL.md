@@ -507,9 +507,16 @@ Receipts:  ~/insidedesk-logs/facility-entry/YYYY-MM-DD/receipts/
 
 ---
 
-## Step 6 — Log the run
+## Step 6 — Close browser tabs
 
-After Step 5, call the **`skill-logger`** skill with the following payload:
+Before logging, close any GoldenEye tabs that were opened during Step 5 using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation response.
+
+---
+
+## Step 7 — Log the run
+
+After Step 6, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

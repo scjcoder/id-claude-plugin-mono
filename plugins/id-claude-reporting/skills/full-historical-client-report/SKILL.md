@@ -477,9 +477,16 @@ Plain-English summary covering:
 
 ---
 
-## Step 13 — Log the run
+## Step 13 — Close browser tabs
 
-After Step 12, call the **`skill-logger`** skill with the following payload:
+Before logging, close any GoldenEye browser tabs opened during the report generation using the **`chrome-cleanup`** helper skill.
+Pass the `tabId` from your browser navigation responses.
+
+---
+
+## Step 14 — Log the run
+
+After Step 13, call the **`skill-logger`** skill with the following payload:
 
 | Field | Value |
 |---|---|

@@ -4,6 +4,11 @@ All notable changes to the ID Claude Ops plugin are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [1.22.8] - 2026-06-26
+
+### Fixed
+- refactor Chrome cleanup: add chrome-cleanup helper, update 13 skills to use it
+
 ## [1.22.7] - 2026-06-26
 
 ### Added

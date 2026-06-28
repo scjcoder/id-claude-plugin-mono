@@ -3,6 +3,7 @@
 All notable changes to the ID Claude Ops plugin are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.22.8] - 2026-06-26
 
@@ -14,10 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 - add chrome-test skill to validate Chrome tool availability
 
-## [Unreleased]
-
 ### Security
-- Public-repo hardening: removed `SECURITY_REVIEW.md` from the source and from git
+- Public-repo hardening: removed `SECURITY_REVIEW.md` from source and git
   history (history rewritten + force-pushed). Moved non-secret runtime identifiers
   (AWS account id, internal hostnames, HubSpot portal id, Slack ids) into a gitignored
   `config/insidedesk.local.json`; source now carries placeholders (`<AWS_ACCOUNT_ID>`,
@@ -432,5 +431,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   Location records are batch-associated to the ticket after creation using
   v4 associations endpoint (typeId 153, USER_DEFINED). Unmatched facilities are logged
   in the summary note, Slack message, and context note. Added `locations_associated`
-  and `locations_unmatched` to the Step 11 return dict.
-

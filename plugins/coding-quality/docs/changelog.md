@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- 10 new skills converted from the `aws-email-wizard` repo's Windsurf/Devin
+  workflows (`.devin/workflows/`), genericized and de-duplicated against existing
+  plugin content: `documentation-update`, `git-release`, `git-save`,
+  `git-hooks-setup`, `git-whitespace-hooks`, `gitlab-ci-best-practices`,
+  `root-cleanup`, `test-suite-bootstrap`, `project-analysis`,
+  `merge-to-production`. Full conversion record, including what was genericized
+  and what was learned from each, is in `docs/workflow-skill-conversions.md`.
+
 ### Changed
 - Migrated from the standalone `ai-coding-quality` repo into the `id-claude-plugin-mono`
   monorepo as the `coding-quality` plugin, distributed via the `insidedesk-tools`

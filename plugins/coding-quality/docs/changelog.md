@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-06-28
+
 ### Added
 - 10 new skills converted from the `aws-email-wizard` repo's Windsurf/Devin
   workflows (`.devin/workflows/`), genericized and de-duplicated against existing

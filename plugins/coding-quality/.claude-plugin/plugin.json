@@ -1,6 +1,6 @@
 {
   "name": "coding-quality",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Claude-facing coding standards \u2014 universal clean-code, git, security, error-handling, testing, and documentation rules with MUST/SHOULD/MAY tiers, plus Python, Python on AWS (boto3), Terraform/AWS, AWS Lambda (Node.js), GitLab CI (OIDC trust-policy pinning), and web-frontend stack overlays, and pre-commit/pre-PR/new-project checklists.",
   "author": {
     "name": "Sean Johnson",

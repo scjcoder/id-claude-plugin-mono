@@ -20,6 +20,7 @@ Depends on **id-claude-shared** for AWS auth, secret retrieval, and skill loggin
 | `snapshot-error-report` | Reads the GoldenEye Snapshots page and produces an Excel data table and PDF summary of all 400/422 errors for today, delivered to Slack. |
 | `full-historical-client-report` | Generates a complete client history PDF covering all locations, snapshot activity (18 months), cancellation records, HubSpot tickets, key contacts, and Gmail email trail. Works for active, at-risk, and churned clients. Delivered to Slack DM. |
 | `install-team-summary` | Weekday morning digest of Gmail and HubSpot Install pipeline activity, delivered as an image to Slack. |
+| `morning-brief` | Weekday morning brief for Sean — calendar, unread emails, HubSpot install tickets cross-referenced with GoldenEye sync status and Slack #installs, and action items. Delivered as a self-contained HTML report. |
 
 ## Structure
 
@@ -37,6 +38,7 @@ id-claude-reporting/
     ├── dos-report/                    # Date of Service inactivity report
     ├── full-historical-client-report/ # Full client relationship history PDF
     ├── install-team-summary/          # Morning install pipeline digest
+    ├── morning-brief/                 # Weekday morning brief (calendar, email, installs, action items)
     ├── pms-oos-report/                # PMS Out-of-Sync report
     ├── powerbi-export/                # Power BI Excel export
     └── snapshot-error-report/         # GoldenEye snapshot error report
@@ -64,19 +66,13 @@ See `CLAUDE.md` for full developer docs.
 
 1. Install **id-claude-shared** first (this plugin depends on it)
 2. Add the `insidedesk-tools` marketplace: Customize → Plugins → add
-   `gitlab.com/insidedesk/id-claude-plugin-mono`
+   `https://github.com/scjcoder/id-claude-plugin-mono`
 3. Install **id-claude-reporting** from that marketplace
 
 ## Versioning
 
 Follows semantic versioning. See `docs/changelog.md` for release history.
-
-
 ## Configuration
 
 Non-secret runtime identifiers (AWS account id, hostnames, HubSpot portal id, Slack ids)
-are read from `config/insidedesk.local.json` at the monorepo root (gitignored). Source
-files use placeholders like `<AWS_ACCOUNT_ID>`; copy `config/insidedesk.example.json` to
-`config/insidedesk.local.json` and fill in the real values. Secrets (API tokens/keys) are
-never stored here — they come from the macOS Keychain / AWS Secrets Manager via the
-`get-secret` skill. See the repo-root `README.md` and `config/README.md`.
+are read from `config/insidedesk.local.json` at the monorepo root (gitignored).

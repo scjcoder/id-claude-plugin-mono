@@ -55,6 +55,16 @@ Core rules are universal. Stack overlays add or tighten rules — they never rel
 
 - [coding-quality](skills/coding-quality/SKILL.md) — entry point that auto-triggers on any coding task and loads the rules above as binding.
 - [clean-code-pass](skills/clean-code-pass/SKILL.md) — 13-pass systematic code review workflow (naming, function design, complexity, error handling, security, DRY, dead code, dependencies, type safety, comments, formatting, test coverage, verification). Use before PRs or when code "feels messy".
+- [documentation-update](skills/documentation-update/SKILL.md) — detect project type, review recent git history, update ADRs/README/architecture docs.
+- [git-release](skills/git-release/SKILL.md) — full release procedure: QA, semver bump, changelog, tagging, release notes, rollback.
+- [git-save](skills/git-save/SKILL.md) — end-to-end commit procedure for repos with submodules; defers to `rules/02-git.md` for conventions.
+- [git-hooks-setup](skills/git-hooks-setup/SKILL.md) — install pre-commit hooks via shared submodule or this plugin's template.
+- [git-whitespace-hooks](skills/git-whitespace-hooks/SKILL.md) — fix commits broken by pre-commit rewriting staged files; dedupe hooks; migrate Git LFS hooks.
+- [gitlab-ci-best-practices](skills/gitlab-ci-best-practices/SKILL.md) — `.gitlab-ci.yml` structure, verification, common failure modes.
+- [root-cleanup](skills/root-cleanup/SKILL.md) — categorize and relocate files cluttering a project root.
+- [test-suite-bootstrap](skills/test-suite-bootstrap/SKILL.md) — scaffold app-harness + integration + unit test coverage.
+- [project-analysis](skills/project-analysis/SKILL.md) — systematic project health/status assessment.
+- [merge-to-production](skills/merge-to-production/SKILL.md) — safe production merges with environment-config swap handling.
 
 ## Resources
 

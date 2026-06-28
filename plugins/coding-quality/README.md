@@ -70,6 +70,16 @@ These templates ship with the plugin and can be copied directly to new projects.
 
 - [coding-quality](skills/coding-quality/SKILL.md) — entry point that auto-triggers on any coding task and loads the rules above as binding.
 - [clean-code-pass](skills/clean-code-pass/SKILL.md) — 13-pass systematic code review workflow. Covers naming, function design, complexity, error handling, security, DRY, dead code, dependencies, type safety, comments, formatting, test coverage, and verification. Use before PRs or when code "feels messy".
+- [documentation-update](skills/documentation-update/SKILL.md) — detect project type, review recent git history, and update ADRs/README/architecture docs to match.
+- [git-release](skills/git-release/SKILL.md) — full release procedure: QA, semver bump, changelog generation, tagging, release notes, rollback path.
+- [git-save](skills/git-save/SKILL.md) — end-to-end commit procedure for repos with submodules (submodule-first, grouped commits, push). Conventions live in [`rules/02-git.md`](rules/02-git.md); this skill is the procedure.
+- [git-hooks-setup](skills/git-hooks-setup/SKILL.md) — install pre-commit hooks via the shared submodule or this plugin's own template.
+- [git-whitespace-hooks](skills/git-whitespace-hooks/SKILL.md) — fix commits failing after pre-commit rewrites staged files; prevent duplicate hook execution; migrate Git LFS hooks into pre-commit.
+- [gitlab-ci-best-practices](skills/gitlab-ci-best-practices/SKILL.md) — `.gitlab-ci.yml` structure, verification, and common failure modes.
+- [root-cleanup](skills/root-cleanup/SKILL.md) — categorize and relocate files cluttering a project root without breaking imports or CI.
+- [test-suite-bootstrap](skills/test-suite-bootstrap/SKILL.md) — scaffold an app harness plus integration and unit test coverage for an undertested codebase.
+- [project-analysis](skills/project-analysis/SKILL.md) — systematic project health/status assessment: structure, docs, git activity, code quality, security.
+- [merge-to-production](skills/merge-to-production/SKILL.md) — safely merge to production with explicit handling of environment-specific config swaps.
 
 ## Distribution
 

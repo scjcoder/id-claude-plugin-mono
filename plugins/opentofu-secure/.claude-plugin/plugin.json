@@ -16,5 +16,6 @@
     "gitlab-oidc",
     "cost-optimization",
     "drift-detection"
-  ]
+  ],
+  "version_status": "frozen \u2014 versioning moved to marketplace level"
 }

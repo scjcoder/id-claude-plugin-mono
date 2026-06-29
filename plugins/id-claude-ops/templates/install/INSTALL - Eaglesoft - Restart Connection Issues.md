@@ -3,7 +3,7 @@
 **HubSpot ID:** 62996328
 
 ## Subject
-InsideDesk: 
+InsideDesk:
 Ticket: Ticket name
 
 ## Body

@@ -6,7 +6,7 @@
 Let's get started - complete your office list
 
 ## Body
-Hi 
+Hi
 Contact: First Name
 ,
 

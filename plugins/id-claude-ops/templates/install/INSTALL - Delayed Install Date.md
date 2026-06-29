@@ -6,7 +6,7 @@
 Request for Office Information Ahead of Your Installation
 
 ## Body
-Hello 
+Hello
 Contact: firstname
 ,
 

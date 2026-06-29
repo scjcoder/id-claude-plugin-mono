@@ -7,7 +7,7 @@ Ticket: subject
 - Installed
 
 ## Body
-Good Evening 
+Good Evening
 Contact: firstname
 ,
 

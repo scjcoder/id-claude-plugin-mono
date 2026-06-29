@@ -3,12 +3,12 @@
 **HubSpot ID:** 58270058
 
 ## Subject
-InsideDesk - 
+InsideDesk -
 Company: Company name
  - Additional Locations Request
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

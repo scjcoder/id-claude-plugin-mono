@@ -7,7 +7,7 @@ Ticket: Ticket name
 - Ready to Install
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

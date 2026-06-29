@@ -7,7 +7,7 @@ Company: Company name
  - InsideDesk Denticon Installation
 
 ## Body
-Hello 
+Hello
 Contact: First Name
 ,
 
@@ -23,10 +23,10 @@ The InsideDesk will utilize our access to Denticon to pull all new claims data a
 
 We ask that you please utilize the following information to create a Denticon Account for InsideDesk:
 
-Username: 
+Username:
 Placeholder: Denticon Username
 
-First Name: 
+First Name:
 Company: Company name
 
 Last Name: DenticonID

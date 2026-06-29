@@ -3,11 +3,11 @@
 **HubSpot ID:** 53891612
 
 ## Subject
-RESOLVED - 
+RESOLVED -
 Ticket: Ticket name
 
 ## Body
-Hello 
+Hello
 Contact: First Name
 ,
 

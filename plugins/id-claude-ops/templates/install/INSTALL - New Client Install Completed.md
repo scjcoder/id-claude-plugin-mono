@@ -7,7 +7,7 @@ Ticket: Ticket name
  - Install Completed
 
 ## Body
-Good Afternoon 
+Good Afternoon
 Contact: First Name
 ,
 

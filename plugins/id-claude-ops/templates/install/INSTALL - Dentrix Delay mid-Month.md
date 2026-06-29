@@ -6,7 +6,7 @@
 INSTALLED - Temporary Processing Delay for Dentrix
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

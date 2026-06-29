@@ -6,7 +6,7 @@
 Ticket: Ticket name
 
 ## Body
-Hi 
+Hi
 Contact: First Name
 ,
 

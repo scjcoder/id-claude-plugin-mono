@@ -6,7 +6,7 @@
 InsideDesk - Final Follow-Up: Office Information Required to Proceed
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 
@@ -16,7 +16,7 @@ To avoid further delays, please submit the required information using the link b
 
 📄 InsideDesk Office Information Form
 
-I’ve also copied 
+I’ve also copied
 Deal: Deal owner
  on this email in case you have any questions about your account. If you no longer wish to proceed, please let us know so we can update our records accordingly.
 

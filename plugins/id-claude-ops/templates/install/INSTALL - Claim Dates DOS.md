@@ -7,7 +7,7 @@ Company: name
  - Request for Status Update on Claims Activity
 
 ## Body
-Hello 
+Hello
 Contact: firstname
 ,
 

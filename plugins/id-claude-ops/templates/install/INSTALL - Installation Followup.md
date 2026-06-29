@@ -6,7 +6,7 @@
 InsideDesk - Follow-Up on Installation Instructions
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

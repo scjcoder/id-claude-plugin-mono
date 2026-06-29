@@ -6,7 +6,7 @@
 Ticket: Ticket name
 
 ## Body
-Good 
+Good
 Placeholder: Morning / Afternoon
 
 Contact: First Name

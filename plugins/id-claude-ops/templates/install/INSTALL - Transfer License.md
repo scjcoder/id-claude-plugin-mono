@@ -6,7 +6,7 @@
 Insidedesk - License Transfer Option - Inactive Office
 
 ## Body
-Hi 
+Hi
 Contact: First Name (Insider)
 ,
 

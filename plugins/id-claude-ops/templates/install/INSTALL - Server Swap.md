@@ -6,7 +6,7 @@
 Ticket: Ticket name
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

@@ -6,13 +6,13 @@
 InsideDesk: Open Dental Self Install Request
 
 ## Body
-Good Day 
+Good Day
 Contact: First Name
 ,
 
 Ticket: Ticket name
 
-We are writing to complete an install of the InsideDesk software for 
+We are writing to complete an install of the InsideDesk software for
 Company: Company name
 . We have two options to conduct the install for your convenience. If you follow the steps below the installation will take a little while, but if you prefer to schedule a meeting you can see the link at the bottom.
 
@@ -22,7 +22,7 @@ Open the attached step by step instructions: Open Dental Installation Guide
 
 Installer URL: Open Dental Send Claim.1.5.3.msi
 
-API Key: 
+API Key:
 Placeholder: LIST OF API KEYS
 
 Reply to this email letting us know the install steps have been done

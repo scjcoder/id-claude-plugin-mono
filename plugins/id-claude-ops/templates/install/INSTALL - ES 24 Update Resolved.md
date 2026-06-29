@@ -6,7 +6,7 @@
 Update: Eaglesoft Version 24 Compatibility Issue Resolved
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

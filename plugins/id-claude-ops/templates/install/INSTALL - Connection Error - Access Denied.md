@@ -6,13 +6,13 @@
 InsideDesk - Access Denied Error – Security Software Exclusions Needed
 
 ## Body
-Good Day 
+Good Day
 Contact: First Name
 ,
 
 We are currently installed, but we are just seeing an error with our connection.
 
-These practices with 
+These practices with
 Company: Company name
  are presently failing to upgrade our client due to the following error: “Access is denied.” This is typically caused by security software blocking access.
 

@@ -49,6 +49,11 @@ All entries use account `insidedesk` in macOS Keychain.
 | `secup-slack-signing-secret` | Slack Signing Secret | Slack signing secret for insidedesk-secup |
 | `secup-slack-webhook-url` | Slack Incoming Webhook URL | Slack webhook for insidedesk-secup |
 | `kolla-api-key` | Kolla API Key | Kolla integration API key |
+| `cloudflare-account-id` | Cloudflare Account ID | Cloudflare account identifier |
+| `cloudflare-api-token` | Cloudflare API Token | Cloudflare API token (R2 + general access) |
+| `cloudflare-r2-access-key-id` | Cloudflare R2 Access Key ID | S3-compatible access key for R2 |
+| `cloudflare-r2-secret-access-key` | Cloudflare R2 Secret Access Key | S3-compatible secret for R2 |
+| `cloudflare-r2-endpoint` | Cloudflare R2 S3 Endpoint URL | `https://<account-id>.r2.cloudflarestorage.com` |
 
 Add new names here as new integrations are added.
 

@@ -27,7 +27,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Per-plugin `docs/changelog.md` files are frozen and kept for historical reference.
 
 ### Security
-- Purged internal hostname (`goldeneye.insidedesk.net`) from full git history on
+- Purged internal hostname (`<GOLDENEYE_HOST>`) from full git history on
   both remotes (GitLab + GitHub mirror) using `git filter-repo`. Replaced with the
   `<GOLDENEYE_HOST>` placeholder consistent with the rest of the codebase.
 

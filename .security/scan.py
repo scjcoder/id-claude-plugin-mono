@@ -23,6 +23,7 @@ Usage:
     python3 .security/scan.py                 # scan, write report, set exit code
     python3 .security/scan.py --json          # print machine-readable JSON to stdout
     python3 .security/scan.py --update-baseline   # accept current findings as known
+    python3 .security/scan.py --no-history    # skip full-history scan (fast; used by pre-commit hook)
 """
 from __future__ import annotations
 
@@ -202,14 +203,17 @@ def main() -> int:
             })
 
     # 2) full git history — secrets only (identifiers in history are low value)
-    seen_hist = set()
-    for sha, path in history_blobs().items():
-        text = run(["git", "cat-file", "-p", sha])
-        for fnd in scan_text(text, f"<history>{path}@{sha[:8]}", "history", SECRET_RULES, GENERIC_FP_RE):
-            if fnd["fp"] in seen_hist:
-                continue
-            seen_hist.add(fnd["fp"])
-            findings.append(fnd)
+    #    Skipped when --no-history is passed (e.g. from the pre-commit hook) so the
+    #    hook stays fast.  Run without the flag manually or in CI for a full audit.
+    if "--no-history" not in args:
+        seen_hist = set()
+        for sha, path in history_blobs().items():
+            text = run(["git", "cat-file", "-p", sha])
+            for fnd in scan_text(text, f"<history>{path}@{sha[:8]}", "history", SECRET_RULES, GENERIC_FP_RE):
+                if fnd["fp"] in seen_hist:
+                    continue
+                seen_hist.add(fnd["fp"])
+                findings.append(fnd)
 
     # 3) suppress baselined
     baseline = load_baseline()

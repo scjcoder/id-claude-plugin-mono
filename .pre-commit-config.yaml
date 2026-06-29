@@ -1,0 +1,27 @@
+repos:
+  # ── Placeholder / secret leak scanner ───────────────────────────────────────
+  # Runs the repo's own .security/scan.py in fast mode (--no-history) so every
+  # commit is checked before it lands.  The full history audit (no flag) still
+  # runs on the scheduled task and can be invoked manually at any time.
+  - repo: local
+    hooks:
+      - id: placeholder-leak-scan
+        name: Placeholder & secret leak scan
+        entry: python3 .security/scan.py --no-history
+        language: system
+        pass_filenames: false
+        always_run: true
+        # Exit code 2 = new findings; treat that as a failure.
+        # Exit code 0 = clean.  Exit code 1 = scanner error (also fail).
+
+  # ── Standard file hygiene ────────────────────────────────────────────────────
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: detect-private-key

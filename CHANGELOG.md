@@ -18,6 +18,11 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.0.1] - 2026-06-30
+
+### Fixed
+- fix(hubspot-ticket-generator): add IT/Install POC label as top-priority IT contact; add prior-ticket fallback for external IT vendors
+
 ## [1.0.0] - 2026-06-29
 
 ### Changed

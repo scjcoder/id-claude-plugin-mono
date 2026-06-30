@@ -431,3 +431,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Location records are batch-associated to the ticket after creation using
   v4 associations endpoint (typeId 153, USER_DEFINED). Unmatched facilities are logged
   in the summary note, Slack message, and context note. Added `locations_associated`
+
+  and `locations_unmatched` to the Step 11 return dict.
+

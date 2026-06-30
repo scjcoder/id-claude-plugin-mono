@@ -29,3 +29,78 @@ ticketing, client offboarding, install coordination, communications, and AWS aut
 | `insidedesk-facility-entry` | Bulk-enter facility/office records into the InsideDesk Operations Dashboard from a spreadsheet (Excel/CSV). |
 | `list-client-locations` | Retrieve and display all active locations for a client as a formatted table with PMS info. |
 | `mb2-install-ticket` | Create HubSpot Install Pipeline tickets from Monday Board approval emails, with IT c
+ntact resolution and Slack notification. |
+| `mb2-monday-to-ge` | Read the MB2 Monday Board "To Be Installed" group via Chrome and create GoldenEye facility records for any office not yet in GoldenEye. |
+| `monday-account-update` | Post an update note on a dental office item in the MB2 InsideDesk Install List Monday Board. |
+| `office-ticket-history` | Look up recent HubSpot support tickets and Gmail activity for a dental office — used to check for known issues before creating new tickets. |
+| `sync-status` | Check whether a dental facility is currently syncing with InsideDesk by looking up its most recent GoldenEye snapshot. |
+| `update-it-contact` | Add or update an IT contact for a location in HubSpot and associate them with a support ticket. |
+
+## Structure
+
+```
+id-claude-ops/
+├── .claude-plugin/
+│   └── plugin.json              # Plugin metadata and version
+├── docs/
+│   └── changelog.md             # Version history
+└── skills/
+    ├── _shared/                   # Shared HubSpot/Slack helpers
+    ├── aws-login/
+    ├── bitwerx-jira-ticket/
+    ├── cancellation-ticket/
+    ├── check-422-tax-ids/
+    ├── chrome-cleanup/            # Helper to close Chrome tabs after use
+    ├── chrome-test/               # Test Chrome tool availability
+    ├── client-comms/
+    ├── client-offboarding/
+    ├── client-pms-summary/
+    ├── create-422-tickets/
+    ├── create-kolla-invite/
+    ├── dataco-health-check/
+    ├── dataco-sync-status/
+    ├── draft-422-client-email/
+    ├── full-sync-status/
+    ├── goldeneye-tin-normalization/
+    ├── hubspot-context-note/
+    ├── hubspot-human-note/
+    ├── hubspot-ticket-generator/
+    ├── insidedesk-facility-entry/
+    ├── list-client-locations/
+    ├── mb2-install-ticket/
+    ├── mb2-monday-to-ge/
+    ├── monday-account-update/
+    ├── office-ticket-history/
+    ├── sync-status/
+    └── update-it-contact/
+```
+
+## Distribution
+
+This plugin ships through the `insidedesk-tools` marketplace, which serves it
+directly from `plugins/id-claude-ops/` in the monorepo. There is no `.plugin` build step.
+
+**Install:** in Cowork, go to Customize → Plugins → add the marketplace
+`https://github.com/scjcoder/id-claude-plugin-mono`, then install `id-claude-ops`.
+
+**Ship a change:** from the monorepo root, run the release helper:
+
+```bash
+./release.sh id-claude-ops <new-version> "<changelog message>" [Added|Changed|Fixed|Removed|Security]
+```
+
+It bumps the version in `.claude-plugin/plugin.json`, updates `docs/changelog.md`,
+commits, and pushes. Teammates receive the update on their next "Update" in
+Customize → Plugins.
+
+See `CLAUDE.md` for full developer docs.
+
+
+## Configuration
+
+Non-secret runtime identifiers (AWS account id, hostnames, HubSpot portal id, Slack ids)
+are read from `config/insidedesk.local.json` at the monorepo root (gitignored). Source
+files use placeholders like `<AWS_ACCOUNT_ID>`; copy `config/insidedesk.example.json` to
+`config/insidedesk.local.json` and fill in the real values. Secrets (API tokens/keys) are
+never stored here — they come from the macOS Keychain / AWS Secrets Manager via the
+`get-secret` skill. See the repo-root `README.md` and `config/README.md`.

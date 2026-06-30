@@ -227,7 +227,14 @@ Collect all results across pages.
 
 Rank contacts using this priority order (highest first):
 
-1. **External ticketing system (highest)** — Contact name contains "TICKET" or
+0. **IT/Install POC label (highest)** — Contact has the "IT/Install POC" association
+   label (USER_DEFINED typeId 75) on this company. These are explicitly tagged as the
+   IT vendor/contact for this client and should always be used first. The contact is
+   often from a third-party managed services provider (e.g. Burke Onsite) whose contacts
+   are NOT directly associated with the client company — only the IT/Install POC label
+   links them. This label is the authoritative signal; do not skip it.
+
+1. **External ticketing system** — Contact name contains "TICKET" or
    "HELPDESK" AND has a portal URL in either:
    - The `jobtitle` field (e.g. `https://encorehelpdesk.bz/login.php`) — this is
      the most common pattern; the portal URL is stored as the job title
@@ -258,6 +265,32 @@ For the selected IT contact AND all Account POC contacts, fetch:
 `email`, `firstname`, `lastname`, `jobtitle`, `phone`
 
 All Account POCs will also be associated to the ticket (Step 7).
+
+### Step 6d — Fallback: check recent ticket contacts
+
+If no contact scores at tier 0–3 (only Account POCs found, or no contacts at all),
+search the 3 most recent Install Pipeline tickets associated with this company and
+collect all contacts on those tickets:
+
+```python
+# Search recent tickets for this company
+POST /crm/v3/objects/tickets/search
+filterGroups: [{ filters: [{ propertyName: "hs_pipeline", operator: "EQ", value: "66471460" }] }]
+# Then check associations for company_id
+sorts: [{ propertyName: "createdate", direction: "DESCENDING" }]
+limit: 5
+```
+
+For each prior ticket, fetch its associated contacts via
+`GET /crm/v4/objects/tickets/{ticket_id}/associations/contacts`.
+Collect all unique contacts across those tickets.
+
+**External-domain contacts are the key signal:** if any contact's email domain does NOT
+match the client company's primary domain, that contact is almost certainly an IT vendor.
+Use the external-domain contact as the IT contact and note the source as
+"external IT vendor — identified from prior ticket history".
+
+If the fallback also finds nothing useful, fall through to Account POC only.
 
 ---
 

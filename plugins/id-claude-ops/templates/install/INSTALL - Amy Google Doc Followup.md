@@ -7,7 +7,7 @@ Ticket: subject
  - Follow Up
 
 ## Body
-Hi 
+Hi
 Contact: firstname
 ,
 

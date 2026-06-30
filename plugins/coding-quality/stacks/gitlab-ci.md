@@ -102,18 +102,18 @@ fetch_secrets:
   script:
     - |
       set -euo pipefail
-      
+
       # Get the raw secret string
       SECRET_STRING=$(aws secretsmanager get-secret-value \
         --secret-id prod/database \
         --query 'SecretString' \
         --output text)
-      
+
       # Parse nested JSON with jq -r
       DB_HOST=$(echo "${SECRET_STRING}" | jq -r '.database.host')
       DB_PORT=$(echo "${SECRET_STRING}" | jq -r '.database.port')
       API_KEY=$(echo "${SECRET_STRING}" | jq -r '.services.api.key')
-      
+
       # Export for downstream use
       echo "DB_HOST=${DB_HOST}" >> "${CI_PROJECT_DIR}/.env"
 ```

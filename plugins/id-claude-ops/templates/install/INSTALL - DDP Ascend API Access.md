@@ -10,16 +10,16 @@ Hello DDP,
 
 Can you please grant InsideDesk access to Ascend APIs for our client’s offices:
 
-DSO Name: 
+DSO Name:
 Contact: Company Name
 
-DSO Contact: 
+DSO Contact:
 Placeholder: NAME  EMAIL
 
-Customer ID: 
+Customer ID:
 Placeholder: ASCEND CUSTOMER ID
 
-DSO Locations: 
+DSO Locations:
 Placeholder: LIST OF FACILITIES
 
 Please provide the Ascend Organization API ID for access.

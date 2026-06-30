@@ -23,7 +23,7 @@ Username: [Ascend Username]
 
 First Name: IDAscend
 
-Last Name: 
+Last Name:
 Company: Company name
 
 email: dentrixascend@insidedesk.com

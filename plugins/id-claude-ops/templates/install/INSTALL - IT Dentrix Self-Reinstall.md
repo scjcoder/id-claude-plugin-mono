@@ -6,7 +6,7 @@
 Ticket: Ticket name
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 
@@ -22,7 +22,7 @@ Ticket: Ticket name
 
 Placeholder: OFFICE NAME - INSTALLER URL
 
- Server: 
+ Server:
 Placeholder: SERVER NAME
 
 Email us to let us know so we can complete the connection and pull fresh claims data.

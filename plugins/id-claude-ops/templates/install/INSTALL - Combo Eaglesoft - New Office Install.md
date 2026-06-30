@@ -3,15 +3,15 @@
 **HubSpot ID:** 63140690
 
 ## Subject
-InsideDesk - Eaglesoft Install Instructions - 
+InsideDesk - Eaglesoft Install Instructions -
 Company: name
 
 ## Body
-Good Day 
+Good Day
 Contact: firstname
 ,
 
-We are writing to complete an install of the InsideDesk software for 
+We are writing to complete an install of the InsideDesk software for
 Company: name
 . We have two options to conduct the install for your convenience. If you follow the steps below the install will take a little while, but if you prefer to schedule a meeting you can see the link at the bottom.
 

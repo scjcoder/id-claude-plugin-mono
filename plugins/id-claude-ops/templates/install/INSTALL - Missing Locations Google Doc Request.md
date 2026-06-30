@@ -6,15 +6,15 @@
 InsideDesk - Additional Locations Request
 
 ## Body
-Good Afternoon 
+Good Afternoon
 Contact: First Name
 ,
 
 We have been spot-checking our current locations for your account and noticed that we may still be pending installation at a few sites.
 
-According to the most recent signed agreement we have on file, the goal was to connect a total of 
+According to the most recent signed agreement we have on file, the goal was to connect a total of
 Placeholder: TOTAL LOCATIONS COUNT
- locations. As of now, we’re installed at 
+ locations. As of now, we’re installed at
 Placeholder: INSTALLED LOCATIONS COUNT
  locations, which indicates that there may still be additional locations to bring online.
 

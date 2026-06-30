@@ -6,7 +6,7 @@
 InsideDesk - Action Needed: Complete Office Information for Setup
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

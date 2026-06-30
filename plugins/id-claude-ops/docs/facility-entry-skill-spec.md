@@ -1,8 +1,8 @@
 # Skill Spec: `insidedesk-facility-entry` v2
 
-**Status:** Draft — pending implementation  
-**Author:** Review by Sean Johnson, original skill by David  
-**Date:** 2026-05-27  
+**Status:** Draft — pending implementation
+**Author:** Review by Sean Johnson, original skill by David
+**Date:** 2026-05-27
 **Target plugin:** `id-claude-ops`
 
 ---

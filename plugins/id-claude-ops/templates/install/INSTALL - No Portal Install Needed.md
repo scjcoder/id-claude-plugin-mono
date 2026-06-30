@@ -6,7 +6,7 @@
 Access to Claim Portal and Server Installation
 
 ## Body
-Hi 
+Hi
 Contact: First Name
 ,
 

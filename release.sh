@@ -1,40 +1,39 @@
 #!/usr/bin/env bash
 #
-# release.sh — ship a plugin update to the team.
+# release.sh — ship a marketplace update to the team.
 #
-# In this monorepo the marketplace serves plugins straight from plugins/<name>/,
-# so there is no .plugin archive to build. A "release" is simply: bump the
-# plugin's version, record a changelog line, commit, and push. Teammates pick it
-# up the next time they click "Update" on the insidedesk-tools marketplace.
+# The insidedesk-tools marketplace ships all plugins together from a single repo.
+# A "release" bumps the marketplace version in .claude-plugin/marketplace.json,
+# prepends a changelog entry to the root CHANGELOG.md, commits, and pushes.
+# Teammates pick it up the next time they click "Update" in Customize → Plugins.
 #
 # Usage:
-#   ./release.sh <plugin> <version> "<message>" [type]
+#   ./release.sh <version> "<message>" [type]
 #
-#   <plugin>   one of: id-claude-shared, id-claude-ops,
-#              id-claude-reporting, id-claude-integrations
-#   <version>  new semver, e.g. 1.22.7  (must differ from current)
+#   <version>  new semver, e.g. 1.1.0  (must differ from current)
 #   <message>  changelog line, in quotes
 #   [type]     Added | Changed | Fixed | Removed | Security   (default: Changed)
 #
 # Options (env):
 #   RELEASE_NO_PUSH=1   commit but do not push (review locally first)
+#   RELEASE_NO_SLACK=1  skip the Slack announcement
 #
 # Examples:
-#   ./release.sh id-claude-ops 1.22.7 "kolla invite link now renders first" Fixed
-#   RELEASE_NO_PUSH=1 ./release.sh id-claude-shared 1.4.4 "add foo helper" Added
+#   ./release.sh 1.1.0 "morning-brief hostname leak purged from git history" Security
+#   ./release.sh 1.2.0 "add client-offboarding skill to id-claude-ops" Added
+#   RELEASE_NO_PUSH=1 ./release.sh 1.1.0 "fix snapshot date range" Fixed
 #
 set -euo pipefail
 
 die() { echo "error: $*" >&2; exit 1; }
 
 # --- args ---
-[ $# -ge 3 ] || die "usage: ./release.sh <plugin> <version> \"<message>\" [type]"
-PLUGIN="$1"; VERSION="$2"; MESSAGE="$3"; TYPE="${4:-Changed}"
+[ $# -ge 2 ] || die "usage: ./release.sh <version> \"<message>\" [type]"
+VERSION="$1"; MESSAGE="$2"; TYPE="${3:-Changed}"
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PLUGIN_DIR="$REPO_ROOT/plugins/$PLUGIN"
-PJ="$PLUGIN_DIR/.claude-plugin/plugin.json"
-CHANGELOG="$PLUGIN_DIR/docs/changelog.md"
+MARKETPLACE_JSON="$REPO_ROOT/.claude-plugin/marketplace.json"
+CHANGELOG="$REPO_ROOT/CHANGELOG.md"
 
 # Slack release announcement (set RELEASE_NO_SLACK=1 to skip).
 # Token comes from the macOS Keychain entry used by the InsideDesk skills.
@@ -42,40 +41,31 @@ SLACK_CHANNEL="${SLACK_DM_SEAN:-$(python3 -c "import json,os;p='$REPO_ROOT/confi
 slack_token() { security find-generic-password -a "insidedesk" -s "slack-bot-token" -w 2>/dev/null; }
 
 # --- validate ---
-[ -d "$PLUGIN_DIR" ] || die "no such plugin: $PLUGIN (looked in plugins/$PLUGIN)"
-[ -f "$PJ" ] || die "missing $PJ"
+[ -f "$MARKETPLACE_JSON" ] || die "missing $MARKETPLACE_JSON"
+[ -f "$CHANGELOG" ] || die "missing $CHANGELOG — expected at repo root"
 [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || die "version must be semver x.y.z, got: $VERSION"
 case "$TYPE" in Added|Changed|Fixed|Removed|Security) ;; *) die "type must be Added|Changed|Fixed|Removed|Security, got: $TYPE";; esac
 
-CURRENT="$(perl -0777 -ne 'print $1 if /"version"\s*:\s*"([^"]*)"/' "$PJ")"
-[ -n "$CURRENT" ] || die "could not read current version from $PJ"
+CURRENT="$(perl -0777 -ne 'print $1 if /"version"\s*:\s*"([^"]*)"/' "$MARKETPLACE_JSON")"
+[ -n "$CURRENT" ] || die "could not read current version from $MARKETPLACE_JSON"
 [ "$CURRENT" != "$VERSION" ] || die "version $VERSION is already the current version"
 
 DATE="$(date +%F)"
 
-echo "Plugin:   $PLUGIN"
-echo "Version:  $CURRENT  ->  $VERSION"
-echo "Type:     $TYPE"
-echo "Note:     $MESSAGE"
+echo "Marketplace: insidedesk-tools"
+echo "Version:     $CURRENT  ->  $VERSION"
+echo "Type:        $TYPE"
+echo "Note:        $MESSAGE"
 echo
 
-# --- 1. bump version in plugin.json (touches only the version field) ---
-perl -0777 -i -pe 's/("version"\s*:\s*")[^"]*"/${1}'"$VERSION"'"/' "$PJ"
-echo "✓ bumped $PJ"
+# --- 1. bump version in marketplace.json ---
+perl -0777 -i -pe 's/("version"\s*:\s*")[^"]*"/${1}'"$VERSION"'"/' "$MARKETPLACE_JSON"
+echo "✓ bumped $MARKETPLACE_JSON"
 
 # --- 2. prepend changelog entry (after the preamble, before the first ## [ ) ---
-if [ ! -f "$CHANGELOG" ]; then
-  mkdir -p "$(dirname "$CHANGELOG")"
-  printf '# Changelog\n\nAll notable changes to this plugin are documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).\n\n' > "$CHANGELOG"
-fi
-
 ENTRY="$(printf '## [%s] - %s\n\n### %s\n- %s\n' "$VERSION" "$DATE" "$TYPE" "$MESSAGE")"
 
-# Pass ENTRY via the environment, not -v: BSD awk (macOS default, "awk version
-# 20200816") silently fails to parse a -v string containing an embedded
-# newline ("awk: newline in string ... at source line 1") and aborts before
-# producing output, leaving the changelog untouched even though the rest of
-# the pipeline reports success. ENVIRON[] does not have this limitation.
+# Pass ENTRY via the environment to avoid BSD awk newline-in-string limitation.
 ENTRY="$ENTRY" awk '
   !done && /^## \[/ { print ENVIRON["ENTRY"] "\n"; done=1 }
   { print }
@@ -85,8 +75,8 @@ echo "✓ updated $CHANGELOG"
 
 # --- 3. commit ---
 cd "$REPO_ROOT"
-git add "$PJ" "$CHANGELOG"
-git commit -m "release($PLUGIN): v$VERSION — $MESSAGE" >/dev/null
+git add "$MARKETPLACE_JSON" "$CHANGELOG"
+git commit -m "release(marketplace): v$VERSION — $MESSAGE" >/dev/null
 echo "✓ committed"
 
 # --- 4. push (unless RELEASE_NO_PUSH=1) ---
@@ -109,7 +99,7 @@ if [ -z "$TOKEN" ]; then
   exit 0
 fi
 
-TEXT="$(printf '📦 *%s* v%s — %s\n_%s_ · Update in Customize → Plugins' "$PLUGIN" "$VERSION" "$MESSAGE" "$TYPE")"
+TEXT="$(printf '📦 *insidedesk-tools* v%s — %s\n_%s_ · Update in Customize → Plugins' "$VERSION" "$MESSAGE" "$TYPE")"
 RESP="$(curl -s -X POST https://slack.com/api/chat.postMessage \
   -H "Authorization: Bearer $TOKEN" \
   --data-urlencode "channel=$SLACK_CHANNEL" \

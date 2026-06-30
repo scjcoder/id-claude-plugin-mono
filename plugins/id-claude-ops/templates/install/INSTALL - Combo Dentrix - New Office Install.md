@@ -3,15 +3,15 @@
 **HubSpot ID:** 62287656
 
 ## Subject
-InsideDesk - Dentrix Install Instructions - 
+InsideDesk - Dentrix Install Instructions -
 Ticket: Ticket name
 
 ## Body
-Good Day 
+Good Day
 Contact: First Name
 ,
 
-We are writing to complete an install of the InsideDesk software for 
+We are writing to complete an install of the InsideDesk software for
 Company: Company name
 . We have two options to conduct the install for your convenience. If you follow the steps below the install will take minimal time, but if you prefer to schedule a remote meeting see the link at the bottom.
 

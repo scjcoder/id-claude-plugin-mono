@@ -73,46 +73,45 @@ Each plugin lives under `plugins/<name>/` and the catalog at
 standalone repos (`id-claude-ops`, `id-claude-reporting`, `id-claude-integrations`,
 `id-claude-shared`) are deprecated — edit and release here.
 
-Version behavior: each plugin's version comes from its own
-`plugins/<name>/.claude-plugin/plugin.json`. **Teammates only receive an update when you
-bump that version field.** That keeps your many-times-a-day working commits from pushing
-churn to the team — only a version bump is a release.
+**Version behavior:** the entire marketplace ships under a single version number
+stored in `.claude-plugin/marketplace.json`. All plugins update together when you
+push — no per-plugin version to track. All changes go in the root `CHANGELOG.md`.
 
-### Workflow for a plugin change
+### Workflow for any change
 
 Edit the skill / files under `plugins/<plugin>/...`, then ship with the release
 helper at the repo root:
 
 ```
-./release.sh <plugin> <version> "<message>" [type]
+./release.sh <version> "<message>" [type]
 ```
 
 Example:
 
 ```
-./release.sh id-claude-ops 1.22.7 "kolla invite link now renders first" Fixed
+./release.sh 1.1.0 "add client-offboarding to id-claude-ops" Added
 ```
 
-That single command bumps `version` in `plugins/<plugin>/.claude-plugin/plugin.json`,
+That single command bumps `version` in `.claude-plugin/marketplace.json`,
 prepends a [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) entry to
-`plugins/<plugin>/docs/changelog.md`, commits as
-`release(<plugin>): v<version> — <message>`, and pushes.
+the root `CHANGELOG.md`, commits as
+`release(marketplace): v<version> — <message>`, and pushes.
 
 - `<version>` must be a new semver (`x.y.z`) — the helper refuses a duplicate.
 - `[type]` is one of `Added | Changed | Fixed | Removed | Security` (default `Changed`).
 - Set `RELEASE_NO_PUSH=1` to commit and review locally before pushing.
-- After it pushes, post a note in `#claude-plugins` so the team knows to hit Update.
+- After it pushes, teammates get the update on their next "Update" click in Customize → Plugins.
 
 **There is no `.plugin` build step.** The marketplace serves each plugin straight
 from `plugins/<name>/`, so a release is just the version bump + push that
 `release.sh` performs. The old per-plugin `build-plugin.sh` flow is retired.
 
-### What "ships" vs. what doesn't
+### Per-plugin versions (frozen)
 
-Your everyday commits to this monorepo are invisible to the team — they only pull
-a plugin when its `version` changes. Running `release.sh` (i.e. bumping the
-version) is the **only** action that ships a change. Commit working changes
-freely; release deliberately.
+Prior to marketplace v1.0.0, each plugin had its own version number. Those are
+frozen and kept for historical reference only — see `CHANGELOG.md` for the full
+per-plugin history. The `version_status: frozen` field in each
+`plugins/<name>/.claude-plugin/plugin.json` marks this explicitly.
 
 ### Repo layout
 

@@ -123,7 +123,7 @@ location:
 
 1. Search GoldenEye using the facility name search (use `facilitySearch=` URL param, not `search=`)
 2. Navigate to the facility's snapshots tab with a 2-day window:
-   `https://goldeneye.insidedesk.net/production/admin/facility/<ID>/snapshots?dateFrom=<YESTERDAY>&dateTo=<TODAY>&pageSize=10`
+   `https://<GOLDENEYE_HOST>/production/admin/facility/<ID>/snapshots?dateFrom=<YESTERDAY>&dateTo=<TODAY>&pageSize=10`
 3. Report ✅ (snapshots exist) or 🔴 (no snapshots / Never) per location inline in the report
 
 If GoldenEye is unreachable or the browser session is not available, note that explicitly

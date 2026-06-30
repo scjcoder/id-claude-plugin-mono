@@ -6,11 +6,11 @@
 InsideDesk Install – Dentrix Enterprise (Self-Installation)
 
 ## Body
-Hello 
+Hello
 Contact: firstname
 ,
 
-We’re reaching out to complete the InsideDesk installation for 
+We’re reaching out to complete the InsideDesk installation for
 Contact: company
  at one of your Dentrix Enterprise locations. You can follow the steps below for a quick self-installation or book a time with our Installation Team if you prefer assistance.
 

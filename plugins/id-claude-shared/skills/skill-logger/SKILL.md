@@ -34,7 +34,7 @@ host filesystem where the log repo lives.
 
 ## Step 1 — Determine the log repo path
 
-**Default path:** `~/CODE/id-sean-logs`  
+**Default path:** `~/CODE/id-sean-logs`
 (expands to `/Users/<username>/CODE/id-sean-logs` on macOS)
 
 **Override:** If the current project's `CLAUDE.md` contains a line of the form:

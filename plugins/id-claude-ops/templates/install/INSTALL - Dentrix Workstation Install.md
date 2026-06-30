@@ -6,7 +6,7 @@
 InsideDesk - Dentrix Workstation Install
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

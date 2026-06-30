@@ -6,7 +6,7 @@
 InsideDesk - Dentrix Connection Lost
 
 ## Body
-Good Morning 
+Good Morning
 Contact: First Name
 ,
 

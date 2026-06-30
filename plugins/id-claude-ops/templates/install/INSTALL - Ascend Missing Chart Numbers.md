@@ -6,7 +6,7 @@
 Missing Chart Numbers in Ascend Reports
 
 ## Body
-Hello 
+Hello
 Contact: First Name
 ,
 

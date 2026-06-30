@@ -161,7 +161,7 @@ When triggered directly (not as a sub-step of another skill), respond with:
 
 1. The `DATACO_HEALTH_STATUS` block.
 2. A one-sentence plain-English verdict, e.g.:
-   - "DataCo is fully operational — no active incidents." 
+   - "DataCo is fully operational — no active incidents."
    - "⚠ DataCo has an active outage affecting Batch API and PIMS Data (since Jun 9,
      08:22 EDT). OOS data in any reports run today may be artificially elevated."
 3. Link to the status page: https://status.dataco.vet/#

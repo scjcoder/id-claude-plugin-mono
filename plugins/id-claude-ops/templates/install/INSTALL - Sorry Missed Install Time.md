@@ -3,15 +3,15 @@
 **HubSpot ID:** 54936367
 
 ## Subject
-Sorry We missed Your Install - 
+Sorry We missed Your Install -
 Ticket: client_name
 
 ## Body
-Good Afternoon 
+Good Afternoon
 Contact: firstname
 ,
 
-Sorry, we missed you for your Zoom install session for 
+Sorry, we missed you for your Zoom install session for
 Ticket: client_name
 .
 

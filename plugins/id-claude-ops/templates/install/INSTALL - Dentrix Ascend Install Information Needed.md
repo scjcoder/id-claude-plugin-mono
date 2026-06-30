@@ -6,7 +6,7 @@
 InsideDesk - Action Required: Dentrix Ascend Account Information Needed
 
 ## Body
-Good Day 
+Good Day
 Contact: First Name
 ,
 
